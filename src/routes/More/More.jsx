@@ -3,7 +3,7 @@ import Innovation from "./Innovation"
 import Landing from "./Landing"
 import LangArep from "./LangArep"
 import Objective from "./Objective"
-import Who from "./who"
+import Who from "./Who"
 
 const More = () => {
   return (
