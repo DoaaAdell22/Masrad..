@@ -23,6 +23,7 @@ const Home = () => {
     <How />
     <Know />
     <Conta />
+    
   </div>   
   )
 }

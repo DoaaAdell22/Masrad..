@@ -10,7 +10,7 @@ const Relace = () => {
                 <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[19px] text-[white] justify-center items-center">
                     
                     <p>في دار ضيافة العائلة</p>
-                    <div className="bg-[rgba(252,210,117,0.2)] w-16 h-16 rounded-xl  flex justify-center items-center "><img className="w-10 h-10 " src="/book2.png" /></div>
+                    <div className="bg-[#fcd27533] w-16 h-16 rounded-xl  flex justify-center items-center "><img className="w-10 h-10 " src="/book2.png" /></div>
                 </div>
                 <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[19px] text-[white]  justify-center items-center">
                     <p>  أو مقر الشركة القابضة</p>

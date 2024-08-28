@@ -6,6 +6,8 @@ import Root from './routes/Root'
 import Description from './routes/Description/Description'
 import Building from './routes/Building/Building'
 import More from './routes/More/More'
+import Jobs from './routes/Jobs/Jobs'
+import Contact from './routes/Contact/Contact'
 
 function App() {
 
@@ -28,6 +30,14 @@ function App() {
             {
                 path : 'more',
                 element : <More />
+            },
+            {
+                path : 'jobs',
+                element : <Jobs />
+            },
+            {
+                path : 'contact',
+                element : <Contact />
             },
           ]
       }

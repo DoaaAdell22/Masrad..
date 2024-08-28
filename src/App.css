@@ -1,3 +1,14 @@
-Button {
-    border: none ;
-}
+
+
+.list-circle {
+    list-style: disc;
+    list-style-position: inside;
+    direction: rtl;
+    text-align: right; 
+  }
+.list-number {
+    list-style: decimal;
+    list-style-position: inside;
+    direction: rtl;
+    text-align: right; 
+  }

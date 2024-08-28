@@ -45,8 +45,8 @@ const Header = () => {
           </div>
           <hr className="w-full " />
           <ul className="flex justify-center items-center gap-10 text-center">
-            <li><NavLink to="">واصل معنا الان</NavLink></li>
-            <li><NavLink to="">  وظائف مسرد العائلة </NavLink></li>
+            <li><NavLink to="contact" className={pathname === "/contact" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>واصل معنا الان</NavLink></li>
+            <li><NavLink to="jobs" className={pathname === "/jobs" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>  وظائف مسرد العائلة </NavLink></li>
             <li><NavLink to="more" className={pathname === "/more" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>اعرف اكثر عن مسرد</NavLink></li>
           </ul>
         </div>
