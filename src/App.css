@@ -12,3 +12,6 @@
     direction: rtl;
     text-align: right; 
   }
+
+
+  @import url('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');

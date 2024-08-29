@@ -19,7 +19,7 @@ const Task = () => {
                 <li >  تبيان النفع المباشر الذي قدمته العائلة للمجتمعات:</li>
             </ul>
         </div>
-        <img src="/more.png" className="lg:w-[40%] md:w-[50%]  lg:h-[250px] md:h-[200px]   " />
+        <img src="/Frameadq.png" className="lg:w-[40%] md:w-[50%]  lg:h-[250px] md:h-[200px]   " />
     </div>
 </div>
   )

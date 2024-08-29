@@ -1,3 +1,4 @@
+import Statistics from "../Home/Statistics"
 import Importance from "./Importance"
 import Innovation from "./Innovation"
 import Landing from "./Landing"
@@ -11,6 +12,7 @@ const More = () => {
     <div>
         <Landing />
         <Who />
+        <Statistics />
         <LangArep />
         <Innovation />
         <Objective />

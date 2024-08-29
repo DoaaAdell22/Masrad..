@@ -2,6 +2,7 @@ import Descrip from "../Home/Descrip"
 import Know from "./Know"
 import How from "./How"
 import Conta from "./Conta"
+import Statistics from "./Statistics"
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
     <Descrip />
     <How />
     <Know />
+    <Statistics />
     <Conta />
     
   </div>   
