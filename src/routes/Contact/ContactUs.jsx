@@ -150,7 +150,8 @@ const isPhoneValid = (phone) => {
     name="email"
     rules={[
       {
-type:"email",
+        required: true,
+        type:"email",
         message: 'please write your email',
       },
     ]}
@@ -165,7 +166,7 @@ type:"email",
             name="textrea"
             rules={[
               {
-type:"text",
+                required: true,
                 message: 'please write your message',
               },
             ]}
