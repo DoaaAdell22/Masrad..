@@ -5,44 +5,42 @@ import {  Button, Form, Input, Select, Space } from 'antd'
   import { FlagImage, defaultCountries, parseCountry } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import MapComponent from "../MapComponent";
-// import { PhoneNumberUtil } from 'google-libphonenumber';
+import { PhoneNumberUtil } from 'google-libphonenumber';
 const ContactUs = () => {
 
   const { TextArea } = Input;
 
-// const phoneUtil = PhoneNumberUtil.getInstance();
+const phoneUtil = PhoneNumberUtil.getInstance();
 
 const countries = defaultCountries.filter((country) => {
   const { iso2 } = parseCountry(country);
   return ["sa"].includes(iso2);
 });
 
-// const isPhoneValid = (phone: string) => {
-//   try {
-//     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
-//   } catch (error) {
-//     return false;
-//   }
-// };
+const isPhoneValid = (phone) => {
+  try {
+    return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+  } catch (error) {
+    return false;
+  }
+};
 
-// const onFinish = (values: any) => {
-//   console.log(values)
-// }
+
 
   return (
     <div className="container p-5 mx-auto ">
         <div className="flex md:flex-row flex-col justify-center items-center gap-6">
-            <div className="flex flex-col items-end gap-4 text-[#263238] font-medium sm:text-[15px] text-[14px] w-full sm:w-[50%]">
+            <div className="flex flex-col items-end gap-4 w-full md:w-[50%]">
                 <MapComponent />
-                <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px] text-end">
                   <a href="#">Braunschweiger Str. 14, 12055 Riyadh, Saudi arabia</a>
                   <img src="/buildings.png"  className="w-6 h-6"/>
                 </div>
-                <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px]">
                   <a href="#">info@masrad.com</a>
                   <img src="/sms.png"  className="w-6 h-6"/>
                 </div>
-                <div className="flex justify-center items-center gap-4">
+                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px]">
                   <a href="#">+49 761 123 1203</a>
                   <img src="/call-calling.png"  className="w-6 h-6"/>
                 </div>
@@ -66,14 +64,15 @@ const countries = defaultCountries.filter((country) => {
             </div>
             <div className="flex flex-col md:w-[50%] w-full  ">
               <Form 
-              style={{ direction: 'rtl', textAlign: 'right', color : '#8A8A8A' , fontSize : 700 }}
-                  onFinish={""}
+              style={{ direction: 'rtl', textAlign: 'right' }}
+                  onFinish={''}
                     layout="vertical"
                     >
                     <Form.Item 
-            label={'الاسم بالكامل'}
+            label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}>الاسم بالكامل</span>}
             name="name"
             style={{
+              
               width: '100%',
             }}
             rules={[
@@ -85,7 +84,7 @@ const countries = defaultCountries.filter((country) => {
           >
             <Input size='large' />
           </Form.Item>
-          <div className="flex md:flex-row flex-col justify-center items-center gap-2"><Form.Item label={'رقم الهاتف'} style={{
+          <div className="flex md:flex-row flex-col justify-center items-center gap-2"><Form.Item label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}>رقم الهاتف </span>}style={{
             width: '100%',
           }}>
 <Space.Compact className="w-full">
@@ -147,7 +146,7 @@ const countries = defaultCountries.filter((country) => {
   style={{
     width: '100%',
   }}
-    label={'البريد الالكترونى'}
+    label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}> البريد الالكترونى</span>}
     name="email"
     rules={[
       {
@@ -162,7 +161,7 @@ type:"email",
           style={{
             width: '100%',
           }}
-            label={' رسالتك'}
+            label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}>رسالتك </span>}
             name="textrea"
             rules={[
               {
