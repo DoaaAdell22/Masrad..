@@ -3,8 +3,8 @@ const Statistics = () => {
   return (
     <div className="container mx-auto p-5">
         <div className="flex flex-col justify-center items-center gap-5">
-            <div className="relative">
-                <img src="/play (2).png" className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+            <div className="relative cursor-pointer">
+                <img src="/play (2).png" className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] " />
                 <div className=" bg-black bg-opacity-40  w-full h-full z-10 absolute rounded-2xl"></div>            
                 <img src="/hekaya.png"  className="w-full"/> 
             </div>

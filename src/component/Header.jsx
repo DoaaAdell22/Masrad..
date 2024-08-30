@@ -36,9 +36,9 @@ const Header = () => {
                 key={el.id}  
                 className={pathname === '/' ? "w-8 h-8 rounded-full border-3 border border-[#0C5685] flex justify-center items-center text-[#0C5685]" : "w-8 h-8 rounded-full border-3 border border-[white] flex justify-center items-center text-[white] bg-[#0C5685]" }
               >
-                <span className="w-[16px] h-[16px]">
+                <a href="#" className="w-[16px] h-[16px]">
                   {el.icon}
-                </span>
+                </a>
               </div>
             ))
           }
@@ -75,9 +75,9 @@ const Header = () => {
                 key={el.id}  
                 className={pathname === '/' ? "w-7 h-7 rounded-full border-3 border border-[#0C5685] flex justify-center items-center text-[#0C5685]" : "w-8 h-8 rounded-full border-3 border border-[white] flex justify-center items-center text-[white] bg-[#0C5685]" }
               >
-                <span className="w-[16px] h-[16px]">
+                <a href="#" className="w-[16px] h-[16px]">
                   {el.icon}
-                </span>
+                </a>
               </div>
             ))
           }
