@@ -24,16 +24,16 @@ const Footer = () => {
                 <hr className="bg-[#1F2075]  w-10 " />
                 <p className="text-[#7B7B7B] font-normal  ">هل فكرت الان في الانضمام الى عائلتنا؟ تواصل معنا وسنرشدك الى الطريق!</p>
                 <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 justify-center text-[16px] sm:text-[17px] ">
-                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2 ">  
+                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1 ">  
                         <span className="font-normal">اتصل بنا الان</span>
                         <FaPhone className="text-[#D08A40]"/>
                     </a>
-                    <a href="#" className="text-[15px]">+966 50 622 8581</a>
-                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2">
+                    <a href="#" className="text-[15px] order-1 sm:order-2">+966 50 622 8581</a>
+                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3">
                         <span className="font-normal">  ارسل عبر البريد الالكتروني</span>
                         <MdEmail className="text-[#D08A40]" />
                     </a>
-                    <a className="text-[15px] font-medium lowercase" href="#">INFO@masrad.NET</a>
+                    <a className="text-[15px] font-medium lowercase order-3 sm:order-4" href="#">INFO@masrad.NET</a>
                 </div>
             </div>
             <br className="sm:hidden block" />
