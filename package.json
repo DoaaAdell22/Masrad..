@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "antd": "^5.20.3",
+    "framer-motion": "^11.3.31",
     "git": "^0.1.5",
     "google-libphonenumber": "^3.2.38",
+    "hamburger-react": "^2.5.1",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
