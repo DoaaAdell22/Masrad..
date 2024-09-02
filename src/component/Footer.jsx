@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="border-t-2 border border-[#eee] ">
-        <div className=" container p-5 mx-auto lg:flex lg:flex-row  flex-col  sm:grid sm:grid-cols-2  justify-center   sm:items-start items-center gap-10 ">
+        <div className=" container p-5  mx-auto lg:flex lg:flex-row  flex-col  sm:grid sm:grid-cols-2  justify-center   sm:items-start items-center gap-10 ">
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1f2075]  text-[17px] ">
             <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 sm:hidden  ">
             <img className="" src="/Frame.png" alt="Shared Screenshot" />
@@ -20,11 +20,11 @@ const Footer = () => {
                 </div>
             </div> 
         </div>
-                <h2 className="">تواصل معنا الان عبر</h2>
+                <h2 className="mt-4 sm:mt-0">تواصل معنا الان عبر</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
                 <p className="text-[#7B7B7B] font-normal  ">هل فكرت الان في الانضمام الى عائلتنا؟ تواصل معنا وسنرشدك الى الطريق!</p>
-                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
-                    <div className="flex justify-end items-center gap-4">  
+                <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-3 justify-center items-center">
+                    <div className="flex justify-end items-center gap-4  text-[15px]">  
                         <span className="font-normal">اتصل بنا الان</span>
                         <FaPhone className="text-[#D08A40]"/>
                     </div>
@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">عن المسرد</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='text-[17px] font-normal grid grid-cols-2 sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
+                <ul className='sm:text-[17px] text-[15px] font-normal grid grid-cols-2 sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
                     <li><Link to=""> ما هي صفة المسرد؟ </Link></li>
                     <li><Link to="">  ماذا يفعل المسرد؟   </Link></li>
                     <li><Link to=""> أين يقع مسرد؟  </Link></li>
@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">معلومات تهمك</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='text-[17px] font-normal  grid grid-cols-2 sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
+                <ul className='sm:text-[17px] text-[15px] font-normal  grid grid-cols-2 sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
                     <li><Link to="">    اعرف اكثر عن مسرد </Link></li>
                     <li><Link to="">    كيف يتم بناء مسرد لعائلتكم؟   </Link></li>
                     <li><Link to="">  صفة المسرد   </Link></li>
@@ -73,10 +73,10 @@ const Footer = () => {
             </div>           
         </div>
         <div className="container p-5 mx-auto flex flex-col gap-4"><hr className="w-full h-1" />
-        <div className="flex justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-[10px]">
+        <div className="flex justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-[9px]">
             <div className="flex justify-center items-center sm:gap-3 gap-1">
                 <span>السياسة والخصوصية</span>
-                <span className="bg-[#7B7B7B] h-4 w-[2px]"></span>
+                <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
                 <span>الشروط والأحكام</span>
             </div>
             <span>كل الحقوق منسوبة لشركة دي بلان لسنة 2024</span>
