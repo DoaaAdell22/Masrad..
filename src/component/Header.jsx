@@ -7,8 +7,16 @@ import { motion } from "framer-motion"
 
 const Header = () => {
 
-  const list = { block: { y : -10 } }
-const item = { block: { x: -10 } }
+  const list = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+    exit: { opacity: 0, y: -50, transition: { duration: 0.3 } }
+  };
+
+  const item = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2 } }
+  };
   const [isOpen, setOpen] = useState(false)
 
   const { pathname } = useLocation();
@@ -74,8 +82,12 @@ const item = { block: { x: -10 } }
             <li  ><NavLink to='/' className={pathname === '/' ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'} >  الرئيسية </NavLink></li>
           </ul>
         </div>
+        <hr className={pathname === '/' ? '#0C5685' : 'white'} />
         {
-          isOpen ?  <motion.ul animate="block" variants={list} className="flex flex-col-reverse  gap-5 text-center ">
+          isOpen ?  <motion.ul  initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={list} className="flex flex-col-reverse  gap-5 text-end  md:hidden">
           <motion.li variants={item}><NavLink to="contact" className={pathname === "/contact" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>واصل معنا الان</NavLink></motion.li>
           <motion.li variants={item}><NavLink to="jobs" className={pathname === "/jobs" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>  وظائف مسرد العائلة </NavLink></motion.li>
           <motion.li variants={item}><NavLink to="more" className={pathname === "/more" ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}>اعرف اكثر عن مسرد</NavLink></motion.li>
@@ -86,7 +98,7 @@ const item = { block: { x: -10 } }
         }
         <div className=" flex justify-between items-center   md:hidden ">
           <img className="w-14" src={ pathname === "/" ?"/Frame.png" : '/Frame (2).png'} alt="Shared Screenshot" />
-          <div onClick={clicked}><Hamburger className='text-[#0C5685]  '  /></div>
+          <div onClick={clicked}><Hamburger color={pathname === '/' ? '#0C5685' : 'white'}    /></div>
           
         </div>
         
