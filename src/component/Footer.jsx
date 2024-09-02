@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">عن المسرد</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='sm:text-[17px] text-[15px]  font-normal grid grid-cols-2 sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
+                <ul  className='sm:text-[17px] text-[15px]  font-normal grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center  sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
                     <li><Link to=""> ما هي صفة المسرد؟ </Link></li>
                     <li><Link to="">  ماذا يفعل المسرد؟   </Link></li>
                     <li><Link to=""> أين يقع مسرد؟  </Link></li>
@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">معلومات تهمك</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='sm:text-[17px] text-[15px] font-normal  grid grid-cols-2 sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
+                <ul className='sm:text-[17px] text-[15px] font-normal  grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
                     <li><Link to="">    اعرف اكثر عن مسرد </Link></li>
                     <li><Link to="">    كيف يتم بناء مسرد لعائلتكم؟   </Link></li>
                     <li><Link to="">  صفة المسرد   </Link></li>
