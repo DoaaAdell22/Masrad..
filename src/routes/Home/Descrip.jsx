@@ -4,8 +4,8 @@ const Descrip = () => {
     
     <div className="container p-5 mx-auto flex flex-col gap-6 justify-center items-center">
         <div className="text-center font-bold lg:max-w-[70%] w-auto">
-            <p className="text-[15px] text-[#D08A40] ">صفة المسرد</p>
-            <h3 className="text-[#0C5685] md:text-[30px] text-[25px]">متحف يروي القصة الطويلة ويعطيها ,<span className="text-[#D08A40]">استحقاقها</span>.</h3>
+            <p className="text-[20px] md:text-[15px] text-[#D08A40] ">صفة المسرد</p>
+            <h3 className="text-[#0C5685] md:text-[30px] text-[18px]">متحف يروي القصة الطويلة ويعطيها <span className="text-[#D08A40]">استحقاقها</span></h3>
             <p className="text-[#7B7B7B] md:text-[15px] text-[13px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو
             أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا
             أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت 
@@ -34,7 +34,7 @@ const Descrip = () => {
                 والتقنيات البصرية المتقدمة, والمقتنيات الملموسة, يسرد بصيغة عصرية حكاية عائلة تجارية.</p>
             </div>
         </div>
-        <button className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold ">اعرف اكتر عن المسرد</button>
+        <button className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px]">اعرف اكتر عن المسرد</button>
     </div>
 
 
