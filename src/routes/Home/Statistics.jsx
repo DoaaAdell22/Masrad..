@@ -1,7 +1,7 @@
 
 const Statistics = () => {
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 ">
         <div className="flex flex-col justify-center items-center gap-5">
             <div className="relative cursor-pointer">
                 <img src="/play (2).png" className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] " />
@@ -9,7 +9,7 @@ const Statistics = () => {
                 <img src="/hekaya.png"  className="w-full"/> 
             </div>
         </div>
-        <div className="grid lg:grid-cols-4  md:grid-cols-2 grid-cols-1 gap-10 justify-center sm:text-end  items-center my-5 ">
+        <div className="grid xl:grid-cols-4   md:grid-cols-2 grid-cols-1 gap-6 justify-center sm:text-end  items-center my-5 ">
             <div className="flex flex-col gap-4 justify-center sm:items-end items-center">
                 <span className="text-[#D08A40] lg:text-[48px] text-[30px] font-medium">4000+</span>
                 <p className="text-[#0C5685] text-[19px] font-bold">موظف وموظفة يعملون لأجلكم</p>

@@ -7,25 +7,37 @@ const Footer = () => {
   return (
     <div className="border-t-2 border border-[#eee] ">
         <div className=" container p-5 mx-auto lg:flex lg:flex-row  flex-col  sm:grid sm:grid-cols-2  justify-center   sm:items-start items-center gap-10 ">
-            <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
+            <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1f2075]  text-[17px] ">
+            <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 sm:hidden  ">
+            <img className="" src="/Frame.png" alt="Shared Screenshot" />
+            <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
+            <div className="flex justify-between items-center gap-10 ">
+                <div className="flex justify-center items-center gap-1 ">
+                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaInstagram className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaFacebook className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaYoutube className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaTwitter className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                </div>
+            </div> 
+        </div>
                 <h2 className="">تواصل معنا الان عبر</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
                 <p className="text-[#7B7B7B] font-normal  ">هل فكرت الان في الانضمام الى عائلتنا؟ تواصل معنا وسنرشدك الى الطريق!</p>
-                <div className="flex justify-end items-center gap-4">
-                    
-                    <span className="font-normal">اتصل بنا الان</span>
-                    <FaPhone className="text-[#D08A40]"/>
+                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4">
+                    <div className="flex justify-end items-center gap-4">  
+                        <span className="font-normal">اتصل بنا الان</span>
+                        <FaPhone className="text-[#D08A40]"/>
+                    </div>
+                    <p className="text-[15px]">+966 50 622 8581</p>
+                    <div className="flex justify-end items-center gap-4">
+                        <span className="font-normal">  ارسل عبر البريد الالكتروني</span>
+                        <MdEmail className="text-[#D08A40]" />
+                    </div>
+                    <a className="text-[15px] font-medium lowercase" href="#">INFO@masrad.NET</a>
                 </div>
-                <p className="text-[15px]">+966 50 622 8581</p>
-                <div className="flex justify-end items-center gap-4">
-                    
-                    <span className="font-normal">  ارسل عبر البريد الالكتروني</span>
-                    <MdEmail className="text-[#D08A40]" />
-                </div>
-                <a className="text-[15px] font-medium lowercase" href="#">INFO@masrad.NET</a>
             </div>
             <br className="sm:hidden block" />
-            <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5  ">
+            <div className="sm:flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 hidden ">
                 <img className="" src="/Frame.png" alt="Shared Screenshot" />
                 <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
                 <div className="flex justify-between items-center gap-10 ">
@@ -41,7 +53,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">عن المسرد</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='text-[17px] font-normal flex flex-col gap-5  text-[#7B7B7B]'>
+                <ul className='text-[17px] font-normal grid grid-cols-2 sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
                     <li><Link to=""> ما هي صفة المسرد؟ </Link></li>
                     <li><Link to="">  ماذا يفعل المسرد؟   </Link></li>
                     <li><Link to=""> أين يقع مسرد؟  </Link></li>
@@ -52,7 +64,7 @@ const Footer = () => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
                 <h2 className="">معلومات تهمك</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
-                <ul className='text-[17px] font-normal flex flex-col gap-5 text-[#7B7B7B]'>
+                <ul className='text-[17px] font-normal  grid grid-cols-2 sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
                     <li><Link to="">    اعرف اكثر عن مسرد </Link></li>
                     <li><Link to="">    كيف يتم بناء مسرد لعائلتكم؟   </Link></li>
                     <li><Link to="">  صفة المسرد   </Link></li>
