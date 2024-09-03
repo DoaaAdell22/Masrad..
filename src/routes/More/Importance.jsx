@@ -3,8 +3,8 @@ const Importance = () => {
   return (
     <div className="container p-10 mx-auto flex flex-col justify-center items-center">
         <div className="text-center font-bold lg:max-w-[70%] w-auto">
-            <p className="text-[19px] text-[#D08A40] ">   ماذا يفعل مسرد لعائلتك التجارية؟</p>
-            <h3 className="text-[#0C5685] md:text-[28px] text-[25px] my-5 ">مسرد هي شركة عائلية صارعت وصمدت وانجزت وأصبحت <span className="text-[#D08A40]">ركيزة اقتصادية</span> واسم له موثوقية عالمية </h3>
+            <p className="md:text-[19px] text-[20px] text-[#D08A40] ">   ماذا يفعل مسرد لعائلتك التجارية؟</p>
+            <h3 className="text-[#0C5685] md:text-[28px] text-[18px] my-5 ">مسرد هي شركة عائلية صارعت وصمدت وانجزت وأصبحت <span className="text-[#D08A40]">ركيزة اقتصادية</span> واسم له موثوقية عالمية </h3>
             
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center gap-5 sm:text-end text-center ">
