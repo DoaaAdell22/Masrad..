@@ -1,12 +1,46 @@
 import { FaFacebookF , FaYoutube  } from "react-icons/fa";
 import { FaXTwitter , FaInstagram , FaLinkedinIn  } from "react-icons/fa6";
 import {  Button, Form, Input, Select, Space } from 'antd'
-
+import toast from 'react-hot-toast'
   import { FlagImage, defaultCountries, parseCountry } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import MapComponent from "../MapComponent";
 import { PhoneNumberUtil } from 'google-libphonenumber';
-const ContactUs = () => {
+import axios from "axios";
+const ContactUs = ({settings}) => {
+  
+
+  const  contacts = [7 , 5 , 4];
+  const firstContact = settings.filter((_ , index) => contacts.includes(index))
+
+  const icons1 = (index) =>{
+    if(index === 2){
+      return '/buildings.png'
+    }else if (index === 1){
+      return '/sms.png'
+    }else if (index === 0){
+      return '/call-calling.png'
+    }
+  }
+
+  const arrays = [6, 8, 9, 10 , 11];
+  const twoContact = settings.filter((_, index) => arrays.includes(index));
+
+  const icons2 = (index) => {
+    if(index === 0){
+      return <FaLinkedinIn />
+    }else if (index === 1){
+      return <FaInstagram  />
+    }else if (index === 2 ){
+      return <FaXTwitter />
+    }else if (index === 3){
+      return <FaFacebookF />
+    }else if (index === 4){
+      return <FaYoutube />
+    }else {
+      return ''
+    }
+  }
 
   const { TextArea } = Input;
 
@@ -25,6 +59,15 @@ const isPhoneValid = (phone) => {
   }
 };
 
+  const request = (values) =>{
+    axios.post("https://backend.masrad.com.sa/contact" , values).then((res)=>{
+      const message = res.message
+
+      toast.success(message)
+
+    }).catch(()=>{})
+  }
+
 
 
   return (
@@ -32,40 +75,27 @@ const isPhoneValid = (phone) => {
         <div className="flex md:flex-row flex-col justify-center items-center gap-6">
             <div className="flex flex-col items-end gap-4 w-full md:w-[50%]">
                 <MapComponent />
-                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px] text-end">
-                  <a href="#">Braunschweiger Str. 14, 12055 Riyadh, Saudi arabia</a>
-                  <img src="/buildings.png"  className="w-6 h-6"/>
+                {firstContact.map((el , index) => (
+                  <div key={el.id} className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px]  text-center">
+                    <a href="#">{el.value}</a>
+                    <img src={icons1(index)}  className="w-6 h-6"/>
                 </div>
-                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px]">
-                  <a href="#">info@masrad.com</a>
-                  <img src="/sms.png"  className="w-6 h-6"/>
-                </div>
-                <div className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px] text-[14px]">
-                  <a href="#">+49 761 123 1203</a>
-                  <img src="/call-calling.png"  className="w-6 h-6"/>
-                </div>
-                <div className="flex justify-center items-center gap-2">
-                <div className="flex justify-center items-center gap-4">
-                <a href="#" className="w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center "><FaFacebookF className="w-4 h-4"/></a>
+                ))}
+                
+                
+            <div className="flex justify-center items-center gap-2">
+            {twoContact.map((el , index)=> (
+              <div key={el.id} className="flex justify-center items-center gap-4">
+                <a href={`https://${el.value}`} target="_blank"   className={index === 1 ? "bg-[#d08a40]  text-[white] rounded-full flex justify-center items-center w-8 h-8" :"w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center" } >{icons2(index)}</a>
+              </div>
+            ))}
+                
             </div>
-            <div className="flex justify-center items-center gap-4">
-                <a href="#" className="w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center "><FaYoutube  className="w-4 h-4"/></a>
-            </div>
-            <div className="flex justify-center items-center gap-4">
-                <a href="#" className="w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center "><FaXTwitter  className="w-4 h-4"/></a>
-            </div>
-            <div className="flex justify-center items-center gap-4">
-                <a href="#" className="w-8 h-8 bg-[#D08A40] text-[white] rounded-full flex justify-center items-center "><FaInstagram  className="w-4 h-4"/></a>
-            </div>
-            <div className="flex justify-center items-center gap-4">
-                <a href="#" className="w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center "><FaLinkedinIn  className="w-4 h-4"/></a>
-            </div>
-                </div>
             </div>
             <div className="flex flex-col md:w-[50%] w-full  ">
               <Form 
               style={{ direction: 'rtl', textAlign: 'right' }}
-                  onFinish={''}
+                  onFinish={request}
                     layout="vertical"
                     >
                     <Form.Item 

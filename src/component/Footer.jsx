@@ -3,9 +3,20 @@ import { MdEmail } from "react-icons/md";
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({settings}) => {
+    const social = settings.slice(0 , 4);
+    const  contacts = [12 , 13 ];
+    const Contact = settings.filter((_ , index) => contacts.includes(index))  ;
+
+    const icons = (index) => {
+        if (index === 0){return <FaInstagram />}
+        else if (index === 1){return <FaTwitter /> }
+        else if (index === 2){return <FaFacebook /> }
+        else if (index === 3){return <FaYoutube /> }
+
+     }
   return (
-    <div className="border-t-2 border border-[#eee] ">
+    <div className="border-t-2 border border-[#eee] mt-10 pt-4 ">
         <div className=" container p-5  mx-auto lg:flex lg:flex-row  flex-col  sm:grid sm:grid-cols-2  justify-center   sm:items-start items-center gap-10 ">
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1f2075]  text-[17px] ">
             <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 sm:hidden  ">
@@ -13,27 +24,25 @@ const Footer = () => {
             <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
             <div className="flex justify-between items-center gap-10 ">
                 <div className="flex justify-center items-center gap-1 ">
-                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaInstagram className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaFacebook className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaYoutube className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                    <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaTwitter className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                {social.map((el , index) => (
+                    <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className="w-[60%] h-[60%] text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(index)}</a></div>
+                ))}
                 </div>
             </div> 
         </div>
                 <h2 className="mt-4 sm:mt-0">تواصل معنا الان عبر</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
                 <p className="text-[#7B7B7B] font-normal  ">هل فكرت الان في الانضمام الى عائلتنا؟ تواصل معنا وسنرشدك الى الطريق!</p>
-                <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 justify-center text-[16px] sm:text-[17px] ">
-                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1 ">  
-                        <span className="font-normal">اتصل بنا الان</span>
-                        <FaPhone className="text-[#D08A40]"/>
-                    </a>
-                    <a href="#" className="text-[15px] order-1 sm:order-2">+966 50 622 8581</a>
-                    <a href="#" className="flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3">
-                        <span className="font-normal">  ارسل عبر البريد الالكتروني</span>
-                        <MdEmail className="text-[#D08A40]" />
-                    </a>
-                    <a className="text-[15px] font-medium lowercase order-3 sm:order-4" href="#">INFO@masrad.NET</a>
+                <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 gap-3 justify-center text-[16px] sm:text-[17px] ">
+                    {Contact.map((el,index)=> (
+                        <div key={el.id}>
+                            <a href="#" className={index === 0 ?"flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1" : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3" }>  
+                                <span className="font-normal">{index === 0 ? "اتصل بنا الان" : "ارسل عبر البريد الالكتروني"}</span>
+                                <span className="text-[#D08A40]">{index === 0 ? <FaPhone /> : <MdEmail />}</span>
+                            </a>
+                            <a href="#" className={index === 0 ?  "text-[15px] order-1 sm:order-2" :"text-[15px] font-medium lowercase order-3 sm:order-4"}>{el.value}</a>
+                        </div>
+                    ))}
                 </div>
             </div>
             <br className="sm:hidden block" />
@@ -42,10 +51,9 @@ const Footer = () => {
                 <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
                 <div className="flex justify-between items-center gap-10 ">
                     <div className="flex justify-center items-center gap-1 ">
-                        <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaInstagram className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                        <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaFacebook className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                        <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaYoutube className="w-[60%] h-[60%] text-[#0C5685]"/></span>
-                        <span className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><FaTwitter className="w-[60%] h-[60%] text-[#0C5685]"/></span>
+                    {social.map((el , index) => (
+                        <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className="w-[60%] h-[60%] text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(index)}</a></div>
+                    ))}
                     </div>
                 </div> 
             </div>
@@ -54,10 +62,10 @@ const Footer = () => {
                 <h2 className="">عن المسرد</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
                 <ul  className='sm:text-[17px] text-[15px]  font-normal grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center  sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
-                    <li><Link to=""> ما هي صفة المسرد؟ </Link></li>
+                    <li><Link to="/Description"> ما هي صفة المسرد؟ </Link></li>
                     <li><Link to="">  ماذا يفعل المسرد؟   </Link></li>
                     <li><Link to=""> أين يقع مسرد؟  </Link></li>
-                    <li><Link to=""> كيف يتم بناء مسرد لعائلتكم؟  </Link></li>
+                    <li><Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟  </Link></li>
                 </ul>
             </div> 
             <br className="sm:hidden block" />       
@@ -65,10 +73,10 @@ const Footer = () => {
                 <h2 className="">معلومات تهمك</h2>
                 <hr className="bg-[#1F2075]  w-10 " />
                 <ul className='sm:text-[17px] text-[15px] font-normal  grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center sm:grid-cols-1 gap-5 text-[#7B7B7B]'>
-                    <li><Link to="">    اعرف اكثر عن مسرد </Link></li>
-                    <li><Link to="">    كيف يتم بناء مسرد لعائلتكم؟   </Link></li>
-                    <li><Link to="">  صفة المسرد   </Link></li>
-                    <li><Link to=""> وظائف مسرد العائلة</Link></li>
+                    <li><Link to="/more">    اعرف اكثر عن مسرد </Link></li>
+                    <li><Link to="/building">    كيف يتم بناء مسرد لعائلتكم؟   </Link></li>
+                    <li><Link to="/Description">  صفة المسرد   </Link></li>
+                    <li><Link to="/jobs"> وظائف مسرد العائلة</Link></li>
                 </ul>
             </div>           
         </div>

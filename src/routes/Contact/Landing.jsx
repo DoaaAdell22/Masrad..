@@ -1,5 +1,6 @@
 
 const Landing = () => {
+  
   return (
     <div className="bg-[#0C5685] ">
     <div className=" relative container p-5 mx-auto flex md:flex-row flex-col-reverse justify-center items-center gap-10">

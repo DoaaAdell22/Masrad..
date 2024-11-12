@@ -8,8 +8,14 @@ import Building from './routes/Building/Building'
 import More from './routes/More/More'
 import Jobs from './routes/Jobs/Jobs'
 import Contact from './routes/Contact/Contact'
-
+import {
+    QueryClient,
+    QueryClientProvider,
+  } from '@tanstack/react-query'
+const queryClient = new QueryClient()
 function App() {
+
+
 
     const routes =  createBrowserRouter([
       {
@@ -25,7 +31,8 @@ function App() {
             },
             {
                 path : 'building',
-                element : <Building />
+                element : <Building /> ,
+            
             },
             {
                 path : 'more',
@@ -43,10 +50,14 @@ function App() {
       }
     ])
 
+    
     return(
-          <div className='main'>
-              <RouterProvider router={routes} />
-          </div>
+        <QueryClientProvider client={queryClient}>
+            <div className='main'>
+                <RouterProvider router={routes} />
+            </div>
+    </QueryClientProvider>
+          
     )
 }
 

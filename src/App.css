@@ -19,3 +19,13 @@
       background-color: transparent; 
     }
   
+
+    html{
+      font-size: calc(65% + .7vmin);
+scroll-behavior: smooth;
+-moz-scroll-behavior: smooth;
+-ms-scroll-behavior: smooth;
+-webkit-scroll-behavior: smooth;
+-o-scroll-behavior: smooth;
+
+}

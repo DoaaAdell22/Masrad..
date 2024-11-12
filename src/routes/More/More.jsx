@@ -1,4 +1,4 @@
-import Statistics from "../Home/Statistics"
+import { useOutletContext } from "react-router-dom"
 import Importance from "./Importance"
 import Innovation from "./Innovation"
 import Landing from "./Landing"
@@ -8,16 +8,17 @@ import Objective from "./Objective"
 import Who from "./Who"
 
 const More = () => {
+
+  const [, , , aboutData] = useOutletContext()
   return (
     <div>
-        <Landing />
-        <Who />
-        <Statistics />
-        <LangArep />
-        <Innovation />
-        <Objective />
-        <Importance />
-        <Message />
+        <Landing about={aboutData} />
+        <Who about={aboutData} />
+        <LangArep about={aboutData} />
+        <Innovation about={aboutData} />
+        <Objective about={aboutData} />
+        <Importance about={aboutData} />
+        <Message about={aboutData} />
     </div>
   )
 }
