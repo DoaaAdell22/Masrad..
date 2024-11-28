@@ -3,6 +3,8 @@ const How = ({build}) => {
     const section2 = build.components_sec2 ;
 
     const icons = (slug) => {
+        console.log("Slug:", slug);
+
         if(slug === 'slug-17'){
             return '/team.png' ;
         }else if(slug === 'slug-16'){

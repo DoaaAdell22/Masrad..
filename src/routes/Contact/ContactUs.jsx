@@ -60,7 +60,7 @@ const isPhoneValid = (phone) => {
 };
 
   const request = (values) =>{
-    axios.post("https://backend.masrad.com.sa/contact" , values).then((res)=>{
+    axios.post("https://masrad-backend.deplanagency.com/api/contact" , values).then((res)=>{
       const message = res.message
 
       toast.success(message)
