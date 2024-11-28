@@ -15,7 +15,7 @@ const Home = () => {
     <Descrip data={data}/>
     <How data={data}/>
     <Know data={data}/>
-    <Statistics data={data}/>
+    <Statistics videoUrl={data.video_sec4} data={data}/>
     <Conta data={data}/>
     
   </div>   

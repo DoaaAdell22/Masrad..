@@ -4,15 +4,17 @@ import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = ({settings}) => {
-    const social = settings.slice(0 , 4);
-    const  contacts = [12 , 13 ];
-    const Contact = settings.filter((_ , index) => contacts.includes(index))  ;
+    const social = settings.filter((el)=>["facebook","youtube","instagram","x"].includes(el.key));
+    const Contact = settings.filter((el)=>["phone","email"].includes(el.key));
+    const brief = settings.find((el)=>(el.key==="brief"));
+    // const  contacts = [12 , 13 ];
+    // const Contact = settings.filter((_ , index) => contacts.includes(index))  ;
 
-    const icons = (index) => {
-        if (index === 0){return <FaInstagram />}
-        else if (index === 1){return <FaTwitter /> }
-        else if (index === 2){return <FaFacebook /> }
-        else if (index === 3){return <FaYoutube /> }
+    const icons = (key) => {
+        if (key === "instagram"){return <FaInstagram />}
+        else if (key === "x"){return <FaTwitter /> }
+        else if (key === "facebook"){return <FaFacebook /> }
+        else if (key === "youtube"){return <FaYoutube /> }
 
      }
   return (
@@ -21,11 +23,11 @@ const Footer = ({settings}) => {
             <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1f2075]  text-[17px] ">
             <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 sm:hidden  ">
             <img className="" src="/Frame.png" alt="Shared Screenshot" />
-            <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
+            <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">{brief.value}</p>
             <div className="flex justify-between items-center gap-10 ">
                 <div className="flex justify-center items-center gap-1 ">
                 {social.map((el , index) => (
-                    <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className="w-[60%] h-[60%] text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(index)}</a></div>
+                    <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className=" text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(el.key)}</a></div>
                 ))}
                 </div>
             </div> 
@@ -36,11 +38,11 @@ const Footer = ({settings}) => {
                 <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 gap-3 justify-center text-[16px] sm:text-[17px] ">
                     {Contact.map((el,index)=> (
                         <div key={el.id}>
-                            <a href="#" className={index === 0 ?"flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1" : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3" }>  
-                                <span className="font-normal">{index === 0 ? "اتصل بنا الان" : "ارسل عبر البريد الالكتروني"}</span>
-                                <span className="text-[#D08A40]">{index === 0 ? <FaPhone /> : <MdEmail />}</span>
+                            <a href="#" className={el.key === "phone" ?"flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1" : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3" }>  
+                                <span className="font-normal">{el.key === "phone" ? "اتصل بنا الان" : "ارسل عبر البريد الالكتروني"}</span>
+                                <span className="text-[#D08A40]">{el.key === "phone" ? <FaPhone /> : <MdEmail />}</span>
                             </a>
-                            <a href="#" className={index === 0 ?  "text-[15px] order-1 sm:order-2" :"text-[15px] font-medium lowercase order-3 sm:order-4"}>{el.value}</a>
+                            <a href="#" className={el.key === "phone" ?  "text-[15px] order-1 sm:order-2" :"text-[15px] font-medium lowercase order-3 sm:order-4"}>{el.value}</a>
                         </div>
                     ))}
                 </div>
@@ -48,11 +50,11 @@ const Footer = ({settings}) => {
             <br className="sm:hidden block" />
             <div className="sm:flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 hidden  ">
                 <img className="" src="/Frame.png" alt="Shared Screenshot" />
-                <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا. </p>
+                <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">{brief.value}</p>
                 <div className="flex justify-between items-center gap-10 ">
                     <div className="flex justify-center items-center gap-1 ">
                     {social.map((el , index) => (
-                        <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className="w-[60%] h-[60%] text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(index)}</a></div>
+                        <div key={el.id} className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"><a className=" text-[#0C5685]" href={`https://${el.value}`}  target="_blank">{icons(el.key)}</a></div>
                     ))}
                     </div>
                 </div> 
@@ -63,8 +65,8 @@ const Footer = ({settings}) => {
                 <hr className="bg-[#1F2075]  w-10 " />
                 <ul  className='sm:text-[17px] text-[15px]  font-normal grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center  sm:grid-cols-1  gap-5  text-[#7B7B7B]'>
                     <li><Link to="/Description"> ما هي صفة المسرد؟ </Link></li>
-                    <li><Link to="">  ماذا يفعل المسرد؟   </Link></li>
-                    <li><Link to=""> أين يقع مسرد؟  </Link></li>
+                    {/* <li><Link to="">  ماذا يفعل المسرد؟   </Link></li> */}
+                    <li><Link to="/contact"> أين يقع مسرد؟  </Link></li>
                     <li><Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟  </Link></li>
                 </ul>
             </div> 
@@ -87,7 +89,7 @@ const Footer = ({settings}) => {
                 <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
                 <span>الشروط والأحكام</span>
             </div>
-            <span>كل الحقوق منسوبة لشركة دي بلان لسنة 2024</span>
+            <span>كل الحقوق منسوبة لشركة سطر لسنة 2024</span>
         </div></div>
     </div>
   )

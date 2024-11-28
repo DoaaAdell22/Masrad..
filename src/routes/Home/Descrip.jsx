@@ -12,7 +12,7 @@ const Descrip = ({data}) => {
         }else if(slug === 'slug-3'){
             return '/time.png';
         }else{
-            return "" ;
+            return "/time.png" ;
         }
     }
   return (

@@ -4,14 +4,21 @@ const Descrip = ({char}) => {
     const section2 = char.components_sec2 || []; 
 
     const icons = (slug) => {
-        if(slug === 'slug-6'){
-            return '/spray.png';
-        }else if(slug === 'slug-5'){
-            return '/hand.png' ;
-        }else if(slug === 'slug-4'){
+        if(slug === 'char-1'){
+            return '/time.png';
+        }else if(slug === 'char-2'){
+            return '/time.png' ;
+        }else if(slug === 'char-3'){
+            return '/time.png';
+        }else if(slug === 'char-4'){
+            return '/time.png';
+        }else if(slug === 'char-5'){
+            return '/time.png';
+        }else if(slug === 'char-6'){
             return '/time.png';
         }else{
-            return "" ;
+            return '/time.png';
+
         }
     }
   return (

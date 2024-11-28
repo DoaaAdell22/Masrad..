@@ -3,25 +3,35 @@ const How = ({build}) => {
     const section2 = build.components_sec2 ;
 
     const icons = (slug) => {
+<<<<<<< HEAD
         console.log("Slug:", slug);
 
         if(slug === 'slug-17'){
             return '/team.png' ;
         }else if(slug === 'slug-16'){
+=======
+        // if(slug === 'build-9'){
+        //     return '/team.png' ;
+        // }
+         if(slug === 'build-5'){
+>>>>>>> f1511d6 (enhancments)
             return '/time.png' ;
-        }else if(slug === 'slug-15'){
+        }else if(slug === 'build-1'){
             return '/collect.png';
-        }else if(slug === 'slug-14'){
-            return '/element.png';
-        }else if(slug === 'slug-13'){
-            return '/content.png';
-        }else if(slug === 'slug-12'){
-            return '/Frame (4).png';
-        }else if(slug === 'slug-11'){
-            return '/result.png';
-        }else if(slug === 'slug-10'){
+        }else if(slug === 'build-4'){
             return '/company.png';
-        }else if(slug === 'slug-9'){
+        }else if(slug === 'build-2'){
+            return '/content.png';
+        }else if(slug === 'build-6'){
+            return '/Frame (4).png';
+        }
+        // else if(slug === 'slug-11'){
+        //     return '/result.png';
+        // }
+        // else if(slug === 'slug-10'){
+        //     return '/element.png';
+        // }
+        else if(slug === 'build-3'){
             return '/team2.png';
         }else{
             return ''

@@ -6,8 +6,8 @@ import { useState } from "react";
 import { motion } from "framer-motion"
 
 const Header = ({settings}) => {
-  const social = settings.slice(0 , 4);
-  console.log(social)
+  const social = settings.filter((el)=>["facebook","youtube","instagram","x"].includes(el.key));
+  const email = settings.find((el)=>el.key==="email");
   const list = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
@@ -22,15 +22,14 @@ const Header = ({settings}) => {
 
   const { pathname } = useLocation();
 
-  
 
- const icons = (index) => {
-    if (index === 0){return <FaInstagram />}
-    else if (index === 1){return <FaTwitter /> }
-    else if (index === 2){return <FaFacebook /> }
-    else if (index === 3){return <FaYoutube /> }
+  const icons = (key) => {
+    if (key === "instagram"){return <FaInstagram />}
+    else if (key === "x"){return <FaTwitter /> }
+    else if (key === "facebook"){return <FaFacebook /> }
+    else if (key === "youtube"){return <FaYoutube /> }
+
  }
-
 
  const clicked = () => {
   setOpen(!isOpen)
@@ -48,7 +47,7 @@ const Header = ({settings}) => {
                 className={pathname === '/' ? "w-8 h-8 rounded-full border-3 border border-[#0C5685] flex justify-center items-center text-[#0C5685]" : "w-8 h-8 rounded-full border-3 border border-[white] flex justify-center items-center text-[white] bg-[#0C5685]" }
               >
                 <a href={`https://${el.value}`} target="_blank"  className="w-[16px] h-[16px]">
-                  {icons(index)}
+                  {icons(el.key)}
                 </a>
               </div>
             ))
@@ -65,7 +64,7 @@ const Header = ({settings}) => {
           <img className="w-[100px] h-[112px]" src={ pathname === "/" ?"/Frame.png" : '/Frame (2).png'} alt="Shared Screenshot" />
         </div>
         <div className="md:flex md:flex-col flex-col-reverse md:w-[50%] md:items-end items-center gap-5  lg:text-[16px]  sm:text-[14px] font-medium  hidden ">
-          <a href="#" className="underline hidden md:block md:text-[17px] mt-[7px]">info@masrad.com</a>
+          <a href="#" className="underline hidden md:block md:text-[17px] mt-[7px]">{email.value}</a>
           <hr className="w-full " />
           <ul className="flex justify-center items-center gap-10 text-center ">
             <li><NavLink to='building'  className={pathname === '/building' ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}    >   كيف يتم بناء مسرد لعائلتكم ؟</NavLink></li>

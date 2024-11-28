@@ -11,36 +11,29 @@ const ContactUs = ({settings}) => {
   
 
   const  contacts = [7 , 5 , 4];
-  const firstContact = settings.filter((_ , index) => contacts.includes(index))
+  // const firstContact = settings.filter((_ , index) => contacts.includes(index))
+  const firstContact = settings.filter((el)=>["location","email","phone"].includes(el.key));
 
-  const icons1 = (index) =>{
-    if(index === 2){
+  const icons1 = (key) =>{
+    if(key === "location"){
       return '/buildings.png'
-    }else if (index === 1){
+    }else if (key === "email"){
       return '/sms.png'
-    }else if (index === 0){
+    }else if (key === "phone"){
       return '/call-calling.png'
     }
   }
 
   const arrays = [6, 8, 9, 10 , 11];
-  const twoContact = settings.filter((_, index) => arrays.includes(index));
+  const twoContact = settings.filter((el)=>["facebook","youtube","x","instagram","linkedin"].includes(el.key));
+  const icons2 = (key) => {
+    if (key === "instagram"){return <FaInstagram />}
+    else if (key === "x"){return <FaXTwitter /> }
+    else if (key === "facebook"){return <FaFacebookF /> }
+    else if (key === "youtube"){return <FaYoutube /> }
+    else if (key === "linkedin"){return <FaLinkedinIn /> }
+ }
 
-  const icons2 = (index) => {
-    if(index === 0){
-      return <FaLinkedinIn />
-    }else if (index === 1){
-      return <FaInstagram  />
-    }else if (index === 2 ){
-      return <FaXTwitter />
-    }else if (index === 3){
-      return <FaFacebookF />
-    }else if (index === 4){
-      return <FaYoutube />
-    }else {
-      return ''
-    }
-  }
 
   const { TextArea } = Input;
 
@@ -78,7 +71,7 @@ const isPhoneValid = (phone) => {
                 {firstContact.map((el , index) => (
                   <div key={el.id} className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px]  text-center">
                     <a href="#">{el.value}</a>
-                    <img src={icons1(index)}  className="w-6 h-6"/>
+                    <img src={icons1(el.key)}  className="w-6 h-6"/>
                 </div>
                 ))}
                 
@@ -86,7 +79,7 @@ const isPhoneValid = (phone) => {
             <div className="flex justify-center items-center gap-2">
             {twoContact.map((el , index)=> (
               <div key={el.id} className="flex justify-center items-center gap-4">
-                <a href={`https://${el.value}`} target="_blank"   className={index === 1 ? "bg-[#d08a40]  text-[white] rounded-full flex justify-center items-center w-8 h-8" :"w-8 h-8 bg-[#ccc] text-[white] rounded-full flex justify-center items-center" } >{icons2(index)}</a>
+                <a href={`https://${el.value}`} target="_blank"   className={"hover:bg-[#d08a40] bg-[#ccc]  text-[white] rounded-full flex justify-center items-center w-8 h-8"} >{icons2(el.key)}</a>
               </div>
             ))}
                 
