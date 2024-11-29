@@ -38,11 +38,11 @@ const Footer = ({settings}) => {
                 <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 gap-3 justify-center text-[16px] sm:text-[17px] ">
                     {Contact.map((el,index)=> (
                         <div key={el.id}>
-                            <a href="#" className={el.key === "phone" ?"flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1" : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3" }>  
+                            <a href={el.key==="phone"? `tel:${el.value}`: `mailto:${el.value}`} className={el.key === "phone" ?"flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1" : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3" }>  
                                 <span className="font-normal">{el.key === "phone" ? "اتصل بنا الان" : "ارسل عبر البريد الالكتروني"}</span>
                                 <span className="text-[#D08A40]">{el.key === "phone" ? <FaPhone /> : <MdEmail />}</span>
                             </a>
-                            <a href="#" className={el.key === "phone" ?  "text-[15px] order-1 sm:order-2" :"text-[15px] font-medium lowercase order-3 sm:order-4"}>{el.value}</a>
+                            <a href={el.key==="phone"? `tel:${el.value}`: `mailto:${el.value}`} className={el.key === "phone" ?  "text-[15px] order-1 sm:order-2" :"text-[15px] font-medium lowercase order-3 sm:order-4"}>{el.value}</a>
                         </div>
                     ))}
                 </div>

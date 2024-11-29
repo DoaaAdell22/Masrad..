@@ -12,6 +12,7 @@ import {
     QueryClient,
     QueryClientProvider,
   } from '@tanstack/react-query'
+  import { Toaster } from 'react-hot-toast'
 const queryClient = new QueryClient()
 function App() {
 
@@ -54,6 +55,10 @@ function App() {
     return(
         <QueryClientProvider client={queryClient}>
             <div className='main'>
+            <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
                 <RouterProvider router={routes} />
             </div>
     </QueryClientProvider>

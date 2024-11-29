@@ -3,10 +3,8 @@ import 'video-react/dist/video-react.css'; // import css
 
 const Statistics = ({ data ,videoUrl}) => {
 
-console.log(data)
 
 const statis = data.nums_sec4 || []; 
-console.log({videoUrl})
   return (
     <div className="container mx-auto  p-10 flex flex-col xl:justify-center xl:items-center ">
         <div className="flex flex-col justify-center items-center gap-5 w-full">
@@ -38,7 +36,7 @@ console.log({videoUrl})
               <div key={index} className="flex flex-col gap-4 justify-center  items-center">
                 <span className="text-[#D08A40] lg:text-[48px] text-[28px] font-medium">{el.nums}</span>
                 <p className="text-[#0C5685] text-[19px] font-bold">{el.text}</p>
-                <div className="w-[260px] h-[1px] bg-[#FCD275]"></div>
+                <div className="w-full h-[1px] bg-[#FCD275]"></div>
               </div>
             );
           })}

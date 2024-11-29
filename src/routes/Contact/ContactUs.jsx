@@ -7,6 +7,7 @@ import 'react-international-phone/style.css';
 import MapComponent from "../MapComponent";
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import axios from "axios";
+import { useState } from "react";
 const ContactUs = ({settings}) => {
   
 
@@ -33,7 +34,7 @@ const ContactUs = ({settings}) => {
     else if (key === "youtube"){return <FaYoutube /> }
     else if (key === "linkedin"){return <FaLinkedinIn /> }
  }
-
+const [form] = Form.useForm()
 
   const { TextArea } = Input;
 
@@ -51,14 +52,23 @@ const isPhoneValid = (phone) => {
     return false;
   }
 };
-
+const [loading,setLoading]=useState(false)
   const request = (values) =>{
+    setLoading(true)
+    values.phone = values.countryCode + values.phoneNumber
     axios.post("https://masrad-backend.deplanagency.com/api/contact" , values).then((res)=>{
-      const message = res.message
-
+      setLoading(false)
+    
+      const message = res.data.message
+form.resetFields()
       toast.success(message)
 
-    }).catch(()=>{})
+    }).catch((err)=>{
+      setLoading(false)
+
+      const message = err?.response?.data?.message
+      toast.error(message)
+    })
   }
 
 
@@ -70,7 +80,7 @@ const isPhoneValid = (phone) => {
                 <MapComponent />
                 {firstContact.map((el , index) => (
                   <div key={el.id} className="flex justify-center items-center gap-4  text-[#263238] font-medium sm:text-[15px]  text-center">
-                    <a href="#">{el.value}</a>
+                    <a href={el.key==="email"?(`mailto:${el.value}`):(el.key==="phone"?`tel:${el.value}`:"#location")}>{el.value}</a>
                     <img src={icons1(el.key)}  className="w-6 h-6"/>
                 </div>
                 ))}
@@ -87,13 +97,14 @@ const isPhoneValid = (phone) => {
             </div>
             <div className="flex flex-col md:w-[50%] w-full  ">
               <Form 
+              form={form}
               style={{ direction: 'rtl', textAlign: 'right' }}
                   onFinish={request}
                     layout="vertical"
                     >
                     <Form.Item 
             label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}>الاسم بالكامل</span>}
-            name="name"
+            name="full_name"
             style={{
               
               width: '100%',
@@ -101,7 +112,7 @@ const isPhoneValid = (phone) => {
             rules={[
               {
                 required: true,
-                message: 'please write your name',
+                message: 'ادخل الاسم من فضلك',
               },
             ]}
           >
@@ -111,37 +122,7 @@ const isPhoneValid = (phone) => {
             width: '100%',
           }}>
 <Space.Compact className="w-full">
-<Form.Item
-    dependencies={["countryCode"]}
-    name={"phoneNumber"}
-    noStyle
-    rules={[
-      {
-        required: true,
-        message: 'enter phone number',
-      },
-
-      ({ getFieldValue }) => ({
-        validator(_, value) {
-          if (
-            !value ||
-            isPhoneValid(
-              "+" + getFieldValue("countryCode") + value
-            )
-          ) {
-            return Promise.resolve();
-          }
-          return Promise.reject(
-            new Error("Invalid phone number"
-            )
-          );
-        },
-      }),
-    ]}
-  >
-    <Input  className="w-[calc(100%_-_100px)]" />
-  </Form.Item>
-  <Form.Item initialValue={"966"} name={"countryCode"} noStyle>
+<Form.Item initialValue={"966"} name={"countryCode"} noStyle>
     <Select  size="large" className="!w-[100px]">
       {countries.map((c) => {
         const country = parseCountry(c);
@@ -163,6 +144,37 @@ const isPhoneValid = (phone) => {
     </Select>
   </Form.Item>
   
+<Form.Item
+    dependencies={["countryCode"]}
+    name={"phoneNumber"}
+    noStyle
+    rules={[
+      {
+        required: true,
+        message: 'ادخل رقم هاتفك',
+      },
+
+      ({ getFieldValue }) => ({
+        validator(_, value) {
+          if (
+            !value ||
+            isPhoneValid(
+              "+" + getFieldValue("countryCode") + value
+            )
+          ) {
+            return Promise.resolve();
+          }
+          return Promise.reject(
+            new Error("رقم غير صحيح"
+            )
+          );
+        },
+      }),
+    ]}
+  >
+    <Input  className="w-[calc(100%_-_100px)]" />
+  </Form.Item>
+
 </Space.Compact>
 </Form.Item>
   <Form.Item
@@ -174,9 +186,14 @@ const isPhoneValid = (phone) => {
     rules={[
       {
         required: true,
-        type:"email",
-        message: 'please write your email',
+        // type:"email",
+        message: 'قم بادخال البريد الالكتروني من فضلك',
       },
+      {
+        type:"email",
+        message: 'قم بادخال بريد الالكتروني صحيح',
+
+      }
     ]}
   >
     <Input size='large' />
@@ -186,11 +203,11 @@ const isPhoneValid = (phone) => {
             width: '100%',
           }}
             label={<span style={{ color: '#8A8A8A',  fontWeight : 700 }}>رسالتك </span>}
-            name="textrea"
+            name="message"
             rules={[
               {
                 required: true,
-                message: 'please write your message',
+                message: 'اكتب رسالتك الينا',
               },
             ]}
           >
@@ -204,6 +221,7 @@ const isPhoneValid = (phone) => {
 
             <Form.Item>
             <Button 
+            loading={loading}
               type="primary"
               
               className="mt-4 bg-[#D08A40] p-5 no-hover-effect "

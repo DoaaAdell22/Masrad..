@@ -7,7 +7,6 @@ import {  useOutletContext } from "react-router-dom"
 
 const Description = () => {
   const [, charData ] = useOutletContext()
-  console.log(charData)
   return (
     <div>
         <Landing char={charData} />

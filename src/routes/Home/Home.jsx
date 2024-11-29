@@ -8,7 +8,6 @@ import {  useOutletContext } from "react-router-dom"
 
 const Home = () => {
   const [data ] = useOutletContext()
-  console.log(data)
   return (
   <div> 
     <Landing data={data}/>

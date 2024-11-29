@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Descrip = ({data}) => {
-    console.log(data)
     const section3 = data.components_sec2 || []; 
 
     const icons = (slug) => {

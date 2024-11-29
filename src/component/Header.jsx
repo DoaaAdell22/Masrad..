@@ -64,7 +64,7 @@ const Header = ({settings}) => {
           <img className="w-[100px] h-[112px]" src={ pathname === "/" ?"/Frame.png" : '/Frame (2).png'} alt="Shared Screenshot" />
         </div>
         <div className="md:flex md:flex-col flex-col-reverse md:w-[50%] md:items-end items-center gap-5  lg:text-[16px]  sm:text-[14px] font-medium  hidden ">
-          <a href="#" className="underline hidden md:block md:text-[17px] mt-[7px]">{email.value}</a>
+          <a href={`mailto:${email.value}`} className="underline hidden md:block md:text-[17px] mt-[7px]">{email.value}</a>
           <hr className="w-full " />
           <ul className="flex justify-center items-center gap-10 text-center ">
             <li><NavLink to='building'  className={pathname === '/building' ? 'active text-[#FCD275]' : 'hover:text-[#FCD275]'}    >   كيف يتم بناء مسرد لعائلتكم ؟</NavLink></li>

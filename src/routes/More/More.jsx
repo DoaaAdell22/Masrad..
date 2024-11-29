@@ -11,7 +11,6 @@ import Statistics from "./../Home/Statistics"
 const More = () => {
 
   const [data, , , aboutData] = useOutletContext()
-  console.log({data,aboutData})
   return (
     <div>
         <Landing about={aboutData} />
