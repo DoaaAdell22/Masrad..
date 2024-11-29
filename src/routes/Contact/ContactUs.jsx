@@ -56,7 +56,7 @@ const [loading,setLoading]=useState(false)
   const request = (values) =>{
     setLoading(true)
     values.phone = values.countryCode + values.phoneNumber
-    axios.post("https://masrad-backend.deplanagency.com/api/contact" , values).then((res)=>{
+    axios.post("https://backend.masrad.com.sa/api/contact" , values).then((res)=>{
       setLoading(false)
     
       const message = res.data.message
@@ -65,7 +65,6 @@ form.resetFields()
 
     }).catch((err)=>{
       setLoading(false)
-
       const message = err?.response?.data?.message
       toast.error(message)
     })
