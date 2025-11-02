@@ -7,6 +7,7 @@ const Footer = ({ settings }) => {
   const social = (settings || []).filter((el) =>
     ["facebook", "youtube", "instagram", "x"].includes(el.key)
   );
+  console.log({ settings });
   const Contact = settings.filter((el) => ["phone", "email"].includes(el.key));
   const brief = settings.find((el) => el.key === "brief");
   // const  contacts = [12 , 13 ];
@@ -26,10 +27,73 @@ const Footer = ({ settings }) => {
   return (
     <div className="border-t-2 border border-[#eee] mt-10 pt-4 ">
       <div className=" container p-5  mx-auto lg:flex lg:flex-row  flex-col  sm:grid sm:grid-cols-2  justify-center   sm:items-start items-center gap-10 ">
-        <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1f2075]  text-[17px] ">
-          <div className="flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 sm:hidden  ">
+        <div className="font-bold flex flex-col gap-4 sm:text-start sm:items-start items-center text-center text-[#1F2075]  text-[17px] ">
+          <h2 className="">معلومات تهمك</h2>
+          <hr className="bg-[#1F2075]  w-10 " />
+          <ul className="sm:text-[17px] text-[15px] font-normal  grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center sm:grid-cols-1 gap-5 text-[#7B7B7B]">
+            <li>
+              <Link to="/more"> اعرف اكثر عن مسرد </Link>
+            </li>
+            <li>
+              <Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟ </Link>
+            </li>
+            <li>
+              <Link to="/Description"> صفة المسرد </Link>
+            </li>
+            <li>
+              <Link to="/jobs"> وظائف مسرد العائلة</Link>
+            </li>
+          </ul>
+        </div>
+        <br className="sm:hidden block" />
+
+        <div className="font-bold flex flex-col gap-4 sm:text-start sm:items-start items-center text-center text-[#1F2075]  text-[17px] ">
+          <h2 className="">عن المسرد</h2>
+          <hr className="bg-[#1F2075]  w-10 " />
+          <ul className="sm:text-[17px] text-[15px]  font-normal grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center  sm:grid-cols-1  gap-5  text-[#7B7B7B]">
+            <li>
+              <Link to="/Description"> ما هي صفة المسرد؟ </Link>
+            </li>
+            {/* <li><Link to="">  ماذا يفعل المسرد؟   </Link></li> */}
+            <li>
+              <Link to="/contact"> أين يقع مسرد؟ </Link>
+            </li>
+            <li>
+              <Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟ </Link>
+            </li>
+          </ul>
+        </div>
+
+        <br className="sm:hidden block" />
+        <div className="sm:flex order-[-1] sm:order-none flex-col justify-center  lg:items-center sm:items-start items-center gap-5 hidden  ">
+          <img className="" src="/Frame.png" alt="Shared Screenshot" />
+          <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-start text-center text-[15px] max-w-[400px]">
+            {brief.value}
+          </p>
+          <div className="flex justify-between items-center gap-10 ">
+            <div className="flex justify-center items-center gap-1 ">
+              {social.map((el, index) => (
+                <div
+                  key={el.id}
+                  className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"
+                >
+                  <a
+                    className=" text-[#0C5685]"
+                    href={`https://${el.value}`}
+                    target="_blank"
+                  >
+                    {icons(el.key)}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <br className="sm:hidden block" />
+        <div className="font-bold flex flex-col gap-4 sm:text-start sm:items-start items-center text-center text-[#1f2075]  text-[17px] ">
+          <div className="flex flex-col justify-center  lg:items-center sm:items-start items-center gap-5 sm:hidden  ">
             <img className="" src="/Frame.png" alt="Shared Screenshot" />
-            <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">
+            <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-start text-center text-[15px] max-w-[400px]">
               {brief.value}
             </p>
             <div className="flex justify-between items-center gap-10 ">
@@ -67,8 +131,8 @@ const Footer = ({ settings }) => {
                   }
                   className={
                     el.key === "phone"
-                      ? "flex justify-end items-center sm:gap-4 gap-2 order-2 sm:order-1"
-                      : "flex justify-end items-center sm:gap-4 gap-2 order-4 sm:order-3"
+                      ? "flex justify-start items-center sm:gap-4 gap-2 order-2 sm:order-1"
+                      : "flex justify-start items-center sm:gap-4 gap-2 order-4 sm:order-3"
                   }
                 >
                   <span className="font-normal">
@@ -97,67 +161,6 @@ const Footer = ({ settings }) => {
               </div>
             ))}
           </div>
-        </div>
-        <br className="sm:hidden block" />
-        <div className="sm:flex flex-col justify-center  lg:items-center sm:items-end items-center gap-5 hidden  ">
-          <img className="" src="/Frame.png" alt="Shared Screenshot" />
-          <p className="text-[#7B7B7B] font-normal lg:text-center sm:text-end text-center text-[15px] max-w-[400px]">
-            {brief.value}
-          </p>
-          <div className="flex justify-between items-center gap-10 ">
-            <div className="flex justify-center items-center gap-1 ">
-              {social.map((el, index) => (
-                <div
-                  key={el.id}
-                  className="w-8 h-8 rounded-full border-3 border-[#0C5685] border flex justify-center items-center"
-                >
-                  <a
-                    className=" text-[#0C5685]"
-                    href={`https://${el.value}`}
-                    target="_blank"
-                  >
-                    {icons(el.key)}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <br className="sm:hidden block" />
-        <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
-          <h2 className="">عن المسرد</h2>
-          <hr className="bg-[#1F2075]  w-10 " />
-          <ul className="sm:text-[17px] text-[15px]  font-normal grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center  sm:grid-cols-1  gap-5  text-[#7B7B7B]">
-            <li>
-              <Link to="/Description"> ما هي صفة المسرد؟ </Link>
-            </li>
-            {/* <li><Link to="">  ماذا يفعل المسرد؟   </Link></li> */}
-            <li>
-              <Link to="/contact"> أين يقع مسرد؟ </Link>
-            </li>
-            <li>
-              <Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟ </Link>
-            </li>
-          </ul>
-        </div>
-        <br className="sm:hidden block" />
-        <div className="font-bold flex flex-col gap-4 sm:text-end sm:items-end items-center text-center text-[#1F2075]  text-[17px] ">
-          <h2 className="">معلومات تهمك</h2>
-          <hr className="bg-[#1F2075]  w-10 " />
-          <ul className="sm:text-[17px] text-[15px] font-normal  grid grid-cols-[repeat(2,minmax(0,auto))] w-fit m-0 justify-center sm:grid-cols-1 gap-5 text-[#7B7B7B]">
-            <li>
-              <Link to="/more"> اعرف اكثر عن مسرد </Link>
-            </li>
-            <li>
-              <Link to="/building"> كيف يتم بناء مسرد لعائلتكم؟ </Link>
-            </li>
-            <li>
-              <Link to="/Description"> صفة المسرد </Link>
-            </li>
-            <li>
-              <Link to="/jobs"> وظائف مسرد العائلة</Link>
-            </li>
-          </ul>
         </div>
       </div>
       <div className="container p-5 mx-auto flex flex-col gap-4">

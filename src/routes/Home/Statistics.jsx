@@ -30,7 +30,7 @@ const Statistics = ({ data, videoUrl }) => {
         </div>
       </div>
       <div
-        className="grid xl:grid-cols-4   md:grid-cols-2 grid-cols-1 gap-6 justify-center sm:text-end 
+        className="grid xl:grid-cols-4   md:grid-cols-2 grid-cols-1 gap-6 justify-center sm:text-start 
         items-center my-5 "
       >
         {statis.map((el, index) => {
