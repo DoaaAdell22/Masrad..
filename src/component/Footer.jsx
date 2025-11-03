@@ -120,7 +120,7 @@ const Footer = ({ settings }) => {
           <p className="text-[#7B7B7B] font-normal  ">
             هل فكرت الان في الانضمام الى عائلتنا؟ تواصل معنا وسنرشدك الى الطريق!
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-1 sm:gap-4 gap-3 justify-center text-[16px] sm:text-[17px] ">
+          <div className="grid grid-cols-1 sm:grid-cols-1 sm:gap-4 gap-3 justify-center text-[16px] sm:text-[17px] ">
             {Contact.map((el, index) => (
               <div key={el.id}>
                 <a
@@ -135,13 +135,13 @@ const Footer = ({ settings }) => {
                       : "flex justify-start items-center sm:gap-4 gap-2 order-4 sm:order-3"
                   }
                 >
+                  <span className="text-[#D08A40]">
+                    {el.key === "phone" ? <FaPhone /> : <MdEmail />}
+                  </span>
                   <span className="font-normal">
                     {el.key === "phone"
                       ? "اتصل بنا الان"
                       : "ارسل عبر البريد الالكتروني"}
-                  </span>
-                  <span className="text-[#D08A40]">
-                    {el.key === "phone" ? <FaPhone /> : <MdEmail />}
                   </span>
                 </a>
                 <a
