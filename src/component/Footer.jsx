@@ -171,7 +171,9 @@ const Footer = ({ settings }) => {
             <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
             <span>الشروط والأحكام</span>
           </div>
-          <span>كل الحقوق منسوبة لشركة سطر لسنة 2024</span>
+          <span>
+            كل الحقوق منسوبة لشركة سطر السعودية لسنة {new Date().getFullYear()}
+          </span>
         </div>
       </div>
     </div>
