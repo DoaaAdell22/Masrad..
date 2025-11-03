@@ -5,15 +5,21 @@ const Landing = ({ data }) => {
     <div className="container p-5 mx-auto ">
       <div className="bg-[#0C5685] flex flex-col lg:flex-row lg:items-center  gap-6 rounded-3xl p-6 relative">
         <div className=" md:text-start max-w-3xl 2xl:max-w-4xl text-center flex flex-col gap-4 justify-center items-center md:items-start ">
-          <p className="text-[#FCD275] lg:text-[19px] text-[17px]">عن مسرد</p>
-          <h1 className="lg:text-[30px] md:text-[28px] text-[24px] text-[white] text-shadow-custom">
+          <p className="text-[#FCD275] text-base lg:text-lg font-medium mb-2 mt-2">
+            {" "}
+            {/* عن مسرد */}
+            {data.main_title_sec_1}
+          </p>
+          <h1 className="text-white text-xl leading-normal mb-2 font-bold">
+            {" "}
             {data.title_sec1}
           </h1>
-          <p className="lg:text-[18px] text-[16px] font-bold text-[#FFFFFFCC] text-shadow-custom">
+          <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom ">
+            {" "}
             {data.des_sec1}
           </p>
           <Link
-            className="bg-[#FCD275] md:text-[15px] text-[13px] font-bold text-[#0C5685] lg:py-4 lg:px-8 p-2 my-4  rounded-xl w-fit md:self-start "
+            className="bg-[#FCD275] text-[#0C5685] text-sm md:text-base font-semibold lg:py-3 lg:px-6 py-2 px-4 my-4 rounded-xl w-fit md:self-start"
             to="/more"
           >
             اعرف اكتر عن المسرد

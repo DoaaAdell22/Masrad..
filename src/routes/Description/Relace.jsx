@@ -2,14 +2,15 @@ const Relace = ({ char }) => {
   return (
     <div className="bg-[#0C5685]">
       <div className=" container  mx-auto   flex flex-col-reverse justify-between items-center md:flex-row  gap-10 rounded-3xl px-5 py-10 ">
-        <div className=" md:text-start  flex flex-col gap-5 justify-center md:items-start items-center text-center font-bold lg:w-[60%] md:w-[50%] w-full ">
-          <p className="text-[#FCD275] lg:text-[19px] text-[20px]">
-            أين يقع المسرد؟
+        <div className=" md:text-start  flex flex-col gap-5 justify-center md:items-start items-center text-center lg:w-[60%] md:w-[50%] w-full ">
+          <p className="text-[#FCD275] text-base lg:text-lg font-medium mb-2 mt-2">
+            {/* أين يقع المسرد؟ */}
+            {char.main_title_sec_3}
           </p>
-          <h1 className=" lg:text-[28px] md:text-[20px] text-[18px] text-[white] leading-10">
+          <h1 className="text-white text-xl leading-normal mb-2 font-bold">
             {char.title_sec3}
           </h1>
-          <p className="lg:text-[15px] md:text-[13px] text-[12px] font-bold text-[#FFFFFFCC] text-shadow-custom">
+          <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom ">
             {char.des_sec3}
           </p>
           <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white] justify-center items-center">

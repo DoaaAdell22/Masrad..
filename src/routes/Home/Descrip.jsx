@@ -16,12 +16,15 @@ const Descrip = ({ data }) => {
   };
   return (
     <div className="container p-5 mx-auto flex flex-col gap-6 justify-center items-center">
-      <div className="text-center font-bold lg:max-w-[70%] w-auto">
-        <p className="text-[20px] md:text-[15px] text-[#D08A40] ">صفة المسرد</p>
-        <h3 className="text-[#0C5685] md:text-[30px] text-[18px]">
+      <div className="text-center lg:max-w-[70%] w-auto">
+        <p className="text-[#D08A40] text-base lg:text-lg font-medium mb-2">
+          {/* صفة المسرد */}
+          {data.main_title_sec_2}
+        </p>
+        <h1 className="text-[#0C5685]  text-xl md:text-xl lg:text-xl mb-2 leading-normal md:leading-normal lg:leading-normal font-bold">
           {data.title_sec2}
-        </h3>
-        <p className="text-[#7B7B7B] md:text-[15px] text-[13px]">
+        </h1>
+        <p className="text-[#7B7B7B]  text-sm md:text-base lg:text-lg leading-relaxed font-bold">
           {data.des_sec2}
         </p>
       </div>

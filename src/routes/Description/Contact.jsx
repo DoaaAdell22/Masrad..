@@ -4,19 +4,22 @@ const Contact = ({ char }) => {
   return (
     <div className="container p-5 mx-auto ">
       <div className="bg-[#0C5685] flex flex-col-reverse md:flex-row  justify-center items-center gap-4 rounded-3xl p-10">
-        <div className=" md:text-start md:w-[50%] w-full  text-center font-bold my-6 flex flex-col gap-3 md:items-start items-center">
-          <p className="text-[#88C278] md:text-[19px] text-[20px]">
+        <div className=" md:text-start md:w-[50%] w-full  text-center my-6 flex flex-col gap-3 md:items-start items-center">
+          <p className="text-[#FCD275] text-base lg:text-lg font-medium mb-2 mt-2">
             {" "}
-            تواصل معنا
+            {/* عن مسرد */}
+            {char.main_title_sec_5}
           </p>
-          <h1 className="  lg:text-[28px] md:text-[20px] text-[18px]  text-[white]">
-            {char.title_sec5}{" "}
+          <h1 className="text-white text-xl leading-normal mb-2 font-bold">
+            {" "}
+            {char.title_sec5}
           </h1>
-          <p className="lg:text-[15px] md:text-[13px] text-[12px]  text-[#FFFFFFCC] text-shadow-custom">
+          <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom ">
+            {" "}
             {char.des_sec5}
           </p>
           <Link
-            className="bg-[#88C278] w-fit  text-[white] lg:py-4 lg:px-8 p-2 my-4  rounded-xl font-bold  md:text-[15px] text-[13px] "
+            className="bg-[#FCD275] text-[#0C5685] text-sm md:text-base font-semibold lg:py-3 lg:px-6 py-2 px-4 my-4 rounded-xl w-fit md:self-start"
             to="/more"
           >
             اعرف اكتر عن المسرد

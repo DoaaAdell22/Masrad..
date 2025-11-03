@@ -4,15 +4,17 @@ const Importance = ({ about }) => {
   return (
     <div className="container p-10 mx-auto flex flex-col justify-center items-center">
       <div className="text-center font-bold lg:max-w-[70%] w-auto">
-        <p className="md:text-[19px] text-[20px] text-[#D08A40] ">
+        <p className="text-[#D08A40] text-base lg:text-lg font-medium mb-2">
           {" "}
-          ماذا يفعل مسرد لعائلتك التجارية؟
+          {about.main_title_sec_6}
+          {/* ماذا يفعل مسرد لعائلتك التجارية؟ */}
         </p>
-        <h3 className="text-[#0C5685] md:text-[28px] text-[18px] my-5 ">
+        <h1 className="text-[#0C5685]  leading-normal text-xl mb-2 font-bold">
           {" "}
           {about.title_sec6}
-        </h3>
-        <p className="text-[#7B7B7B] md:text-[15px] text-[13px]">
+        </h1>
+        <p className="text-[#7B7B7B]  text-sm md:text-base lg:text-lg leading-relaxed font-bold">
+          {" "}
           {about.des_sec6}
         </p>
       </div>

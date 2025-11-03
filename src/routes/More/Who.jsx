@@ -3,12 +3,17 @@ const Who = ({ about }) => {
 
   return (
     <div className="container p-10 mx-auto flex flex-col justify-center items-center">
-      <div className="text-center font-bold lg:max-w-[70%] w-auto flex flex-col gap-2">
-        <p className="md:text-[19px] text-[20px]  text-[#D08A40] "> من نحن ؟</p>
-        <h3 className="text-[#0C5685] md:text-[28px] text-[18px] ">
+      <div className="text-center  lg:max-w-[70%] w-auto flex flex-col gap-2">
+        <p className="text-[#D08A40] text-base lg:text-lg font-medium mb-2">
+          {about.main_title_sec_2}
+
+          {/* من نحن ؟ */}
+        </p>
+        <h1 className="text-[#0C5685]  leading-normal text-xl mb-2 font-bold">
           {about.title_sec2}
-        </h3>
-        <p className="text-[#7B7B7B] md:text-[15px] text-[13px]">
+        </h1>
+        <p className="text-[#7B7B7B]  text-sm md:text-base lg:text-lg leading-relaxed font-bold">
+          {" "}
           {about.des_sec2}
         </p>
         <div className="flex flex-col justify-center items-center gap-5 -mb-16"></div>
