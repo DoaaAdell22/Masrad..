@@ -134,7 +134,7 @@ const Header = ({ settings }) => {
                     : "hover:text-[#FCD275]"
                 }
               >
-                واصل معنا الان
+                تواصل معنا الان
               </NavLink>
             </motion.li>
           </motion.ul>

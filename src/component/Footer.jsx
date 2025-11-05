@@ -48,13 +48,13 @@ const Footer = ({ settings }) => {
         {/* <br className="sm:hidden block" /> */}
 
         <div className="font-bold flex flex-col gap-4 sm:text-start sm:items-start items-center text-center text-[#1F2075]  text-[17px] ">
-          <h2 className="">عن المسرد</h2>
+          <h2 className="">عن مسرد</h2>
           <hr className="bg-[#1F2075]  w-10 " />
           <ul className="sm:text-[17px] text-[15px]  font-normal grid grid-cols-1 w-fit m-0 justify-center  gap-5  text-[#7B7B7B]">
             <li>
-              <Link to="/Description"> ما هي صفة المسرد؟ </Link>
+              <Link to="/Description"> ما هي صفة مسرد؟ </Link>
             </li>
-            {/* <li><Link to="">  ماذا يفعل المسرد؟   </Link></li> */}
+            {/* <li><Link to="">  ماذا يفعل مسرد؟   </Link></li> */}
             <li>
               <Link to="/contact"> أين يقع مسرد؟ </Link>
             </li>
