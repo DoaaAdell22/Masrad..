@@ -41,16 +41,16 @@ const Header = ({ settings }) => {
         pathname === "/" ? " text-[#7B7B7B] " : " bg-[#0C5685] text-[white]"
       }
     >
-      <div className="flex flex-col-reverse md:flex-row md:justify-center md:items-stretch gap-5 h-full container p-5 mx-auto">
+      <div className="flex flex-col md:flex-row md:justify-center md:items-stretch gap-5 h-full container p-5 mx-auto">
         <div className=" flex justify-between items-center   md:hidden ">
-          <div onClick={clicked}>
-            <Hamburger color={pathname === "/" ? "#0C5685" : "white"} />
-          </div>
           <img
-            className="w-14"
+            className="w-[80px]"
             src={pathname === "/" ? "/Frame.png" : "/Frame (2).png"}
             alt="Shared Screenshot"
           />
+          <div onClick={clicked}>
+            <Hamburger color={pathname === "/" ? "#0C5685" : "white"} />
+          </div>
         </div>
 
         {isOpen ? (
@@ -59,7 +59,7 @@ const Header = ({ settings }) => {
             animate="visible"
             exit="exit"
             variants={list}
-            className="flex flex-col-reverse  gap-5  md:hidden"
+            className="flex flex-col  gap-5  md:hidden"
           >
             <motion.li variants={item}>
               <NavLink
@@ -142,15 +142,12 @@ const Header = ({ settings }) => {
           ""
         )}
 
-        <hr className={pathname === "/" ? "#0C5685" : "white"} />
+        <hr
+          className={`${
+            pathname === "/" ? "border-[#0C5685]" : "border-white"
+          } hidden md:inline`}
+        />
         <div className="md:flex md:flex-col flex-col-reverse md:w-[50%] md:items-start items-center gap-5  lg:text-[16px]  sm:text-[14px] font-medium  hidden ">
-          <a
-            href={`mailto:${email.value}`}
-            className="underline hidden md:block md:text-[17px] mt-[7px]"
-          >
-            {email.value}
-          </a>
-          <hr className="w-full " />
           <ul className="flex justify-center items-center gap-10 text-center ">
             <li>
               <NavLink
@@ -189,36 +186,16 @@ const Header = ({ settings }) => {
               </NavLink>
             </li>
           </ul>
+          <hr className="w-full " />
         </div>
         <div className=" md:block hidden h-full ">
           <img
-            className="w-[100px] h-[112px]"
+            className="w-[100px] "
             src={pathname === "/" ? "/Frame.png" : "/Frame (2).png"}
             alt="Shared Screenshot"
           />
         </div>
-        <div className="flex  md:flex-col flex-col-reverse md:w-[50%] md:items-end items-center gap-5  lg:text-[16px] text-[12px] sm:text-[14px] font-medium h-full">
-          <div className="md:flex justify-center items-center gap-5 hidden ">
-            {social.map((el) => (
-              <div
-                key={el.id}
-                className={
-                  pathname === "/"
-                    ? "w-8 h-8 rounded-full border-3 border border-[#0C5685] flex justify-center items-center text-[#0C5685]"
-                    : "w-8 h-8 rounded-full border-3 border border-[white] flex justify-center items-center text-[white] bg-[#0C5685]"
-                }
-              >
-                <a
-                  href={`https://${el.value}`}
-                  target="_blank"
-                  className="w-[16px] h-[16px]"
-                >
-                  {icons(el.key)}
-                </a>
-              </div>
-            ))}
-          </div>
-          <hr className="w-full hidden md:block" />
+        <div className="hidden md:flex   md:flex-col flex-col-reverse md:w-[50%] md:items-end items-center gap-5  lg:text-[16px] text-[12px] sm:text-[14px] font-medium h-full">
           <ul className="md:flex justify-center items-center gap-10 text-center hidden">
             <li>
               <NavLink
@@ -241,7 +218,7 @@ const Header = ({ settings }) => {
                     : "hover:text-[#FCD275]"
                 }
               >
-                وظائف مسرد العائلة
+                وظائف مسرد
               </NavLink>
             </li>
 
@@ -258,6 +235,7 @@ const Header = ({ settings }) => {
               </NavLink>
             </li>
           </ul>
+          <hr className="w-full hidden md:block" />
         </div>
       </div>
     </div>
