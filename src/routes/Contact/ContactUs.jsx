@@ -69,7 +69,7 @@ const ContactUs = ({ settings }) => {
     setLoading(true);
     values.phone = values.countryCode + values.phoneNumber;
     axios
-      .post("https://backend.masrad.com.sa/api/contact", values)
+      .post("https://backend.masrad.sa/api/contact", values)
       .then((res) => {
         setLoading(false);
 
