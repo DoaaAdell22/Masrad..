@@ -48,13 +48,13 @@ const Footer = ({ settings }) => {
         {/* <br className="sm:hidden block" /> */}
 
         <div className="font-bold flex flex-col gap-4 sm:text-start sm:items-start items-center text-center text-[#1F2075]  text-[17px] ">
-          <h2 className="">عن مسرد</h2>
+          <h2 className="">عن المسرد</h2>
           <hr className="bg-[#1F2075]  w-10 " />
           <ul className="sm:text-[17px] text-[15px]  font-normal grid grid-cols-1 w-fit m-0 justify-center  gap-5  text-[#7B7B7B]">
             <li>
-              <Link to="/Description"> ما هي صفة مسرد؟ </Link>
+              <Link to="/Description"> ما هي صفة المسرد؟ </Link>
             </li>
-            {/* <li><Link to="">  ماذا يفعل مسرد؟   </Link></li> */}
+            {/* <li><Link to="">  ماذا يفعل المسرد؟   </Link></li> */}
             <li>
               <Link to="/contact"> أين يقع مسرد؟ </Link>
             </li>
@@ -165,28 +165,19 @@ const Footer = ({ settings }) => {
       </div>
       <div className="container p-5 mx-auto flex flex-col gap-4">
         <hr className="w-full h-1" />
-        <div className="flex justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-sm">
+        <div className="flex flex-col lg:flex-row gap-4 justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-sm">
           <div className="flex justify-center items-center sm:gap-3 gap-1">
-            <span>السياسة والخصوصية</span>
+            <span className="whitespace-nowrap">السياسة والخصوصية</span>
             <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
-            <span>الشروط والأحكام</span>
+            <span className="whitespace-nowrap">الشروط والأحكام</span>
           </div>
-          <p className="text-center text-sm text-[#7B7B7B] font-medium md:text-[14px] mt-4">
-            <div className="flex justify-center flex-row-reverse items-center gap-1">
-              <span>© {new Date().getFullYear()}</span>
-              <span>لسنة</span>
-
-              <span className="font-semibold text-gray-700">مسرد</span>
-              <span> جميع الحقوق محفوظة لشركة</span>
-            </div>
-            مشغل بواسطة{" "}
+          <p className="text-center text-sm text-gray-500">
+            {" "}
+            جميع الحقوق محفوظة لشركة{" "}
+            <span className="font-semibold text-gray-700">مسرد لسنة</span> ©
+            2025 — مشغل بواسطة{" "}
             <span className="inline-flex items-center gap-1">
-              {/* <img
-                src="/satr.png"
-                alt="لوقو سطر"
-                className="h-4 w-auto inline"
-              /> */}
-              سطر السعودية
+              <span className="font-medium text-gray-700">سطر السعودية</span>
             </span>
           </p>
         </div>
