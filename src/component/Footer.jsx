@@ -165,13 +165,13 @@ const Footer = ({ settings }) => {
       </div>
       <div className="container p-5 mx-auto flex flex-col gap-4">
         <hr className="w-full h-1" />
-        <div className="flex justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-[9px]">
+        <div className="flex justify-between items-center text-[#7B7B7B] font-medium md:text-[14px] text-sm">
           <div className="flex justify-center items-center sm:gap-3 gap-1">
             <span>السياسة والخصوصية</span>
             <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
             <span>الشروط والأحكام</span>
           </div>
-          <p className="text-center text-sm text-[#7B7B7B] font-medium md:text-[14px] text-[9px] mt-4">
+          <p className="text-center text-sm text-[#7B7B7B] font-medium md:text-[14px] mt-4">
             <div className="flex justify-center flex-row-reverse items-center gap-1">
               <span>© {new Date().getFullYear()}</span>
               <span>لسنة</span>
