@@ -12,7 +12,7 @@ const Task = ({ jobs }) => {
             {jobs.main_title_sec_2}
           </p>
           <h1 className="text-[#0C5685]  leading-normal text-xl mb-2 font-bold">
-            وظائف ومهام نقوم بها في مسرد لأجلكم ومن أجل عائلاتكم الكريمة
+            {jobs.title_sec2}
           </h1>
           <ul className=" text-[#7B7B7B] text-sm md:text-base leading-relaxed font-semibold  flex flex-col gap-4 ">
             {oneList.map((el) => (
