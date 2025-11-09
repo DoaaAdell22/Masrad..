@@ -13,20 +13,20 @@ const Relace = ({ char }) => {
           <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom ">
             {char.des_sec3}
           </p>
-          <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white] justify-center items-center">
-            <div className="bg-[#fcd27533] sm:w-16 sm:h-16 w-14 h-14 rounded-xl  flex justify-center items-center ">
+          <div className=" flex flex-col md:flex-row gap-2 md:gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white] justify-center items-center">
+            <div className="bg-[#fcd27533] sm:w-16 sm:min-w-16 sm:h-16 w-14 min-w-14 h-14  rounded-xl  flex justify-center items-center ">
               <img className="w-8 h-8 sm:w-10 sm:h-10 " src="/book2.png" />
             </div>
             <p>في دار ضيافة العائلة</p>
           </div>
-          <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white]  justify-center items-center">
-            <div className="bg-[rgba(252,210,117,0.2)] sm:w-16 sm:h-16 w-14 h-14 rounded-xl  flex justify-center items-center">
+          <div className=" flex flex-col md:flex-row gap-2 md:gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white]  justify-center items-center">
+            <div className="bg-[rgba(252,210,117,0.2)] sm:w-16 sm:min-w-16 sm:h-16 w-14 min-w-14 h-14  rounded-xl  flex justify-center items-center">
               <img className="w-8 h-8 sm:w-10 sm:h-10 " src="/book2.png" />
             </div>
             <p> أو مقر الشركة القابضة</p>
           </div>
-          <div className=" flex flex-col-reverse md:flex-row gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white] justify-center items-center ">
-            <div className="bg-[rgba(252,210,117,0.2)] sm:w-16 sm:h-16 w-14 h-14 rounded-xl  flex justify-center items-center">
+          <div className=" flex flex-col md:flex-row gap-2 md:gap-4 font-bold text-[16px] md:text-[18px] lg:text-[19px]  text-[white] justify-center items-center ">
+            <div className="bg-[rgba(252,210,117,0.2)] sm:w-16 sm:min-w-16 sm:h-16 w-14 min-w-14 h-14 rounded-xl  flex justify-center items-center">
               <img className="w-8 h-8 sm:w-10 sm:h-10 " src="/book2.png" />
             </div>
             <p>
