@@ -171,7 +171,7 @@ const Footer = ({ settings }) => {
             <span className="bg-[#7B7B7B] h-3 w-[2px]"></span>
             <span className="whitespace-nowrap">الشروط والأحكام</span>
           </div>
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm md:text-[14px] text-gray-500">
             {" "}
             جميع الحقوق محفوظة لشركة{" "}
             <span className="font-semibold text-gray-700">مسرد لسنة</span> ©
