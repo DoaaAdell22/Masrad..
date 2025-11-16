@@ -2,9 +2,9 @@ const How = ({ build }) => {
   const section2 = build.components_sec2;
 
   const icons = (slug) => {
-    // if(slug === 'build-9'){
-    //     return '/team.png' ;
-    // }
+ 
+      return "time.png";
+    
     if (slug === "slug-5") {
       return "/time.png";
     } else if (slug === "slug-1") {
