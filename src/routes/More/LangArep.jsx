@@ -7,7 +7,7 @@ const LangArep = ({ about }) => {
     } else if (slug === "slug-2") {
       return "/echo.png";
     } else {
-      return "";
+      return "echo.png";
     }
   };
 
