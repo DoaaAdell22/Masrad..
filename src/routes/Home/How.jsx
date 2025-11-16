@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const How = ({ data }) => {
   return (
     <div className="bg-[#0C5685]">
@@ -14,9 +16,13 @@ const How = ({ data }) => {
           <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom">
             {data.des_sec3}
           </p>
-          <button className="bg-[#FCD275] text-[#0C5685]  text-sm md:text-base font-semibold  lg:py-4 lg:px-8 p-2 my-4  rounded-xl  w-fit ">
-            المزيد من المعلومات
-          </button>
+     
+                    <Link
+                      className="bg-[#FCD275] text-[#0C5685]  w-fit  lg:py-4 lg:px-8 p-2 my-4  rounded-xl text-sm md:text-base font-semibold "
+                      to="/building"
+                    >
+                      المزيد من المعلومات
+                    </Link>
         </div>
         <img
           src="/1724712836941.png"

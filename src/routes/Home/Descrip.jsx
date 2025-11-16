@@ -29,7 +29,7 @@ const Descrip = ({ data }) => {
         </p>
       </div>
       <div
-        className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center items-center
+        className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center
         gap-5 sm:text-start text-center"
       >
         {section3.map((el) => (

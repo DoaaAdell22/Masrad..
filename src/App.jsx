@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, ScrollRestoration } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import "./App.css";
 import Home from "./routes/Home/Home";

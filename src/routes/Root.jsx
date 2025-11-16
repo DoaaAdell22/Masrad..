@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"
+import { Outlet  , ScrollRestoration} from "react-router-dom"
 import Header from "../component/Header"
 import Footer from "../component/Footer"
 import axios from "../helpers/axios"
@@ -23,6 +23,7 @@ const Root = () => {
     <div>
     
         <Header settings={settingsData} />
+        <ScrollRestoration />
         <Outlet context={[data , charData , buildData , aboutData , jobsData , settingsData ]} />
         <Footer settings={settingsData}  />
     </div> 

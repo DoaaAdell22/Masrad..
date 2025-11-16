@@ -1,9 +1,9 @@
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation ,useNavigationType} from "react-router-dom";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState ,useEffect} from "react";
+import { motion ,AnimatePresence, m} from "framer-motion";
 
 const Header = ({ settings }) => {
   const social = settings.filter((el) =>
@@ -11,19 +11,49 @@ const Header = ({ settings }) => {
   );
   const email = settings.find((el) => el.key === "email");
 
-  const list = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-    exit: { opacity: 0, y: -50, transition: { duration: 0.3 } },
+  const navList = {
+    visible: {
+      opacity: 1,
+      maxHeight: 900,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.07
+      }
+    },
+    hidden: {
+      opacity: 0,
+      maxHeight: 0,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    }
   };
-
-  const item = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+ const navItem = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    },
+    hidden: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    }
   };
   const [isOpen, setOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const navigationType = useNavigationType();
+  
+  useEffect(() => {
+  if(isOpen) setOpen(false);
+  }, [pathname, navigationType]);
+  
   const icons = (key) => {
     if (key === "instagram") return <FaInstagram />;
     else if (key === "x") return <FaTwitter />;
@@ -32,7 +62,7 @@ const Header = ({ settings }) => {
   };
 
   const clicked = () => {
-    setOpen(!isOpen);
+    setOpen(status=>!status);
   };
 
   return (
@@ -48,20 +78,22 @@ const Header = ({ settings }) => {
             src={pathname === "/" ? "/Frame.png" : "/Frame (2).png"}
             alt="Shared Screenshot"
           />
-          <div onClick={clicked}>
-            <Hamburger color={pathname === "/" ? "#0C5685" : "white"} />
+          <div >
+            <Hamburger toggled={isOpen} toggle={setOpen}  color={pathname === "/" ? "#0C5685" : "white"} />
           </div>
         </div>
+  <AnimatePresence>
 
-        {isOpen ? (
+        {/* {isOpen && ( */}
           <motion.ul
+          
             initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={list}
-            className="flex flex-col  gap-5  md:hidden"
+             animate={isOpen ? "visible" : "hidden"}
+            exit="hidden"
+            variants={navList}
+            className="flex flex-col  gap-5  md:hidden will-change-[opacity,max-height] overflow-hidden"
           >
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="/"
                 className={
@@ -74,7 +106,7 @@ const Header = ({ settings }) => {
               </NavLink>
             </motion.li>
 
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="Description"
                 className={
@@ -87,7 +119,7 @@ const Header = ({ settings }) => {
               </NavLink>
             </motion.li>
 
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="building"
                 className={
@@ -99,7 +131,7 @@ const Header = ({ settings }) => {
                 كيف يتم بناء مسرد لعائلتكم ؟
               </NavLink>
             </motion.li>
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="more"
                 className={
@@ -112,7 +144,7 @@ const Header = ({ settings }) => {
               </NavLink>
             </motion.li>
 
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="jobs"
                 className={
@@ -125,7 +157,7 @@ const Header = ({ settings }) => {
               </NavLink>
             </motion.li>
 
-            <motion.li variants={item}>
+            <motion.li variants={navItem}>
               <NavLink
                 to="contact"
                 className={
@@ -138,9 +170,8 @@ const Header = ({ settings }) => {
               </NavLink>
             </motion.li>
           </motion.ul>
-        ) : (
-          ""
-        )}
+        {/* ) } */}
+  </AnimatePresence>
 
         <hr
           className={`${
