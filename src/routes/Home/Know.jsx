@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";  
 const Know = ({ data }) => {
   return (
     <div className="container p-10 mx-auto flex flex-col justify-center items-center">
@@ -14,9 +15,14 @@ const Know = ({ data }) => {
           {" "}
           {data.des_sec4}
         </p>
-        <button className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl md:text-[15px] text-[13px]">
-          المزيد من صفة المسرد
-        </button>
+   
+   
+             <Link
+                className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px] inline-block"
+                to="/description"
+              >
+               المزيد من صفة المسرد
+              </Link>
       </div>
     </div>
   );

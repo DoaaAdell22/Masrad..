@@ -98,8 +98,8 @@ const Header = ({ settings }) => {
                 to="/"
                 className={
                   pathname === "/"
-                    ? "active text-[#FCD275]"
-                    : "hover:text-[#FCD275]"
+                    ? "active text-[#d08a40]"
+                    : "hover:text-[#d08a40]"
                 }
               >
                 الرئيسية
@@ -108,9 +108,9 @@ const Header = ({ settings }) => {
 
             <motion.li variants={navItem}>
               <NavLink
-                to="Description"
+                to="description"
                 className={
-                  pathname === "/Description"
+                  pathname === "/description"
                     ? "active text-[#FCD275]"
                     : "hover:text-[#FCD275]"
                 }
@@ -194,9 +194,9 @@ const Header = ({ settings }) => {
             </li>
             <li>
               <NavLink
-                to="Description"
+                to="description"
                 className={
-                  pathname === "/Description"
+                  pathname === "/description"
                     ? "active text-[#FCD275]"
                     : "hover:text-[#FCD275]"
                 }
@@ -274,3 +274,4 @@ const Header = ({ settings }) => {
 };
 
 export default Header;
+2

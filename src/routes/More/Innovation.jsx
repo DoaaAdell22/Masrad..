@@ -19,7 +19,7 @@ const Innovation = ({ about }) => {
           </p>
           <Link
             className="bg-[#D08A40] text-sm md:text-base font-semibold text-[white] sm:p-3 my-5 p-2  rounded-xl "
-            to="/Description"
+            to="/description"
           >
             المزيد عن صفة مسرد
           </Link>
