@@ -17,12 +17,12 @@ const Know = ({ data }) => {
         </p>
    
    
-             <Link
+             {/* <Link
                 className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px] inline-block"
                 to="/description"
               >
                المزيد من صفة المسرد
-              </Link>
+              </Link> */}
       </div>
     </div>
   );

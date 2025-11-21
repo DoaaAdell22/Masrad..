@@ -17,12 +17,12 @@ const Innovation = ({ about }) => {
           <p className="text-[#7B7B7B]  text-sm md:text-base lg:text-lg leading-relaxed font-bold">
             {about.des_sec4}
           </p>
-          <Link
+          {/* <Link
             className="bg-[#D08A40] text-sm md:text-base font-semibold text-[white] sm:p-3 my-5 p-2  rounded-xl "
             to="/description"
           >
             المزيد عن صفة مسرد
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

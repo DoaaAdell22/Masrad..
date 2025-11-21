@@ -21,7 +21,7 @@ const Descrip = ({ char }) => {
     }
   };
   return (
-    <div className="container p-5 mx-auto flex flex-col gap-6 justify-center items-center">
+    <div className="container px-5 py-10 mx-auto flex flex-col gap-6 justify-center items-center">
       <div className="text-center lg:max-w-[70%] w-auto">
         <p className="text-[#D08A40] text-base lg:text-lg font-medium mb-2">
           {/* صفة المسرد */}
@@ -53,12 +53,12 @@ const Descrip = ({ char }) => {
           </div>
         ))}
       </div>
-      <Link
+      {/* <Link
         className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px]"
         to="/more"
       >
         اعرف اكتر عن المسرد
-      </Link>
+      </Link> */}
     </div>
   );
 };

@@ -17,12 +17,12 @@ const How = ({ data }) => {
             {data.des_sec3}
           </p>
      
-                    <Link
+                    {/* <Link
                       className="bg-[#FCD275] text-[#0C5685]  w-fit  lg:py-4 lg:px-8 p-2 my-4  rounded-xl text-sm md:text-base font-semibold "
                       to="/building"
                     >
                       المزيد من المعلومات
-                    </Link>
+                    </Link> */}
         </div>
         <img
           src="/1724712836941.png"

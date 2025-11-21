@@ -16,15 +16,15 @@ const Objective = ({ about }) => {
           <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom ">
             {about.des_sec5}
           </p>
-          <Link
+          {/* <Link
             className="bg-[#FCD275] text-[#0C5685] text-sm md:text-base font-semibold  sm:p-3 my-5 p-2  rounded-xl w-fit  "
             to="/contact"
           >
             {" "}
             ابدأ قصتك معنا الان{" "}
-          </Link>
+          </Link> */}
         </div>
-        <img src="/Frameadq.png" className="md:w-[50%] lg:w-[40%]     " />
+        <img src="/Frameadq.png" className="max-h-[400px]   " />
       </div>
     </div>
   );

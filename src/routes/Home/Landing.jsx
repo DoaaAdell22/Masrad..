@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Landing = ({ data }) => {
   return (
-    <div className="container p-5 mx-auto ">
+    <div className="container px-5 py-10 mx-auto ">
       <div className="bg-[#0C5685] flex flex-col lg:flex-row lg:items-center  gap-6 rounded-3xl p-6 relative">
         <div className=" md:text-start max-w-3xl 2xl:max-w-4xl text-center flex flex-col gap-4 justify-center items-center md:items-start ">
           <p className="text-[#FCD275] text-base lg:text-lg font-medium mb-2 mt-2">
@@ -18,12 +18,12 @@ const Landing = ({ data }) => {
             {" "}
             {data.des_sec1}
           </p>
-          <Link
+          {/* <Link
             className="bg-[#FCD275] text-[#0C5685] text-sm md:text-base font-semibold lg:py-3 lg:px-6 py-2 px-4 my-4 rounded-xl w-fit md:self-start"
             to="/more"
           >
             اعرف اكتر عن المسرد
-          </Link>
+          </Link> */}
         </div>
         <img
           src="/landing.png"

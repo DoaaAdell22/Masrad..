@@ -18,12 +18,12 @@ const Contact = ({ char }) => {
             {" "}
             {char.des_sec5}
           </p>
-          <Link
+          {/* <Link
             className="bg-[#FCD275] text-[#0C5685] text-sm md:text-base font-semibold lg:py-3 lg:px-6 py-2 px-4 my-4 rounded-xl w-fit md:self-start"
             to="/more"
           >
             اعرف اكتر عن المسرد
-          </Link>
+          </Link> */}
         </div>
         <img src="/Vector (3).png" className="md:w-[50%]  " />
       </div>

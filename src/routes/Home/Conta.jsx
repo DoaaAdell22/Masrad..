@@ -16,12 +16,12 @@ const Conta = ({ data }) => {
           <p className="text-[#FFFFFFCC] text-sm md:text-base lg:text-lg leading-relaxed font-bold text-shadow-custom">
             {data.des_sec5}
           </p>
-          <Link
+          {/* <Link
             className="bg-[#88C278] w-fit  text-[white] lg:py-4 lg:px-8 p-2 my-4  rounded-xl text-sm md:text-base font-semibold "
             to="/more"
           >
             اعرف اكتر عن المسرد
-          </Link>
+          </Link> */}
         </div>
         <img src="/Vector (3).png" className="md:w-[50%]  " />
       </div>

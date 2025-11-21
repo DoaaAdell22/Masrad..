@@ -29,3 +29,6 @@ scroll-behavior: smooth;
 -o-scroll-behavior: smooth;
 
 }
+.video-react-poster{
+  background-color: #0c5685 !important;
+}

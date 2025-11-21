@@ -30,7 +30,7 @@ const Descrip = ({ data }) => {
       </div>
       <div
         className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-center
-        gap-5 sm:text-start text-center"
+        gap-5 sm:text-start text-center mb-8"
       >
         {section3.map((el) => (
           <div
@@ -45,12 +45,12 @@ const Descrip = ({ data }) => {
           </div>
         ))}
       </div>
-      <Link
+      {/* <Link
         className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px]"
         to="/more"
       >
         اعرف اكتر عن المسرد
-      </Link>
+      </Link> */}
     </div>
   );
 };
