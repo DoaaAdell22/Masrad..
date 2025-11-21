@@ -49,7 +49,7 @@ const Descrip = ({ data }) => {
         className="bg-[#D08A40] text-[white] sm:p-3 my-5 p-2  rounded-xl font-bold   md:text-[15px] text-[13px]"
         to="/more"
       >
-        اعرف اكتر عن المسرد
+        اعرف اكثر عن المسرد
       </Link> */}
     </div>
   );
